@@ -1,167 +1,171 @@
 <div align="center">
-  <h1> 30 Days Of Python: Day 4 - Strings</h1>
+  <h1> 30 Дней Python: День 4 - Строки</h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
   <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
   </a>
   <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
-  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
+  <img alt="Подписка на Twitter" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
   </a>
 
-<sub>Author:
-<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> Second Edition: July, 2021</small>
+<sub>Автор:
+<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Асабенех Йетаех</a><br>
+<small> Второе издание: Июль, 2021</small>
 </sub>
 
 </div>
 
-[<< Day 3](../03_Day_Operators/03_operators.md) | [Day 5 >>](../05_Day_Lists/05_lists.md)
+[<< День 3](../03_Day_Operators/03_operators.md) | [День 5 >>](../05_Day_Lists/05_lists.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [Day 4](#day-4)
-  - [Strings](#strings)
-    - [Creating a String](#creating-a-string)
-    - [String Concatenation](#string-concatenation)
-    - [Escape Sequences in Strings](#escape-sequences-in-strings)
-    - [String formatting](#string-formatting)
-      - [Old Style String Formatting (% Operator)](#old-style-string-formatting--operator)
-      - [New Style String Formatting (str.format)](#new-style-string-formatting-strformat)
-      - [String Interpolation / f-Strings (Python 3.6+)](#string-interpolation--f-strings-python-36)
-    - [Python Strings as Sequences of Characters](#python-strings-as-sequences-of-characters)
-      - [Unpacking Characters](#unpacking-characters)
-      - [Accessing Characters in Strings by Index](#accessing-characters-in-strings-by-index)
-      - [Slicing Python Strings](#slicing-python-strings)
-      - [Reversing a String](#reversing-a-string)
-      - [Skipping Characters While Slicing](#skipping-characters-while-slicing)
-    - [String Methods](#string-methods)
-  - [💻 Exercises - Day 4](#-exercises---day-4)
+- [День 4](#день-4)
+  - [Строки](#строки)
+    - [Создание строки](#создание-строки)
+    - [Конкатенация строк](#конкатенация-строк)
+    - [Экранированные последовательности в строках](#экранированные-последовательности-в-строках)
+    - [Форматирование строк](#форматирование-строк)
+      - [Старый стиль форматирования строк (оператор %)](#старый-стиль-форматирования-строк-оператор-)
+      - [Новый стиль форматирования строк (str.format)](#новый-стиль-форматирования-строк-strformat)
+      - [Интерполяция строк / f-строки (Python 3.6+)](#интерполяция-строк--f-строки-python-36)
+    - [Строки Python как последовательности символов](#строки-python-как-последовательности-символов)
+      - [Распаковка символов](#распаковка-символов)
+      - [Доступ к символам в строках по индексу](#доступ-к-символам-в-строках-по-индексу)
+      - [Срезы строк в Python](#срезы-строк-в-python)
+      - [Переворот строки](#переворот-строки)
+      - [Пропуск символов при срезе](#пропуск-символов-при-срезе)
+    - [Методы строк](#методы-строк)
+  - [💻 Упражнения - День 4](#-упражнения---день-4)
 
-# Day 4
+# День 4
 
-## Strings
+## Строки
 
-Text is a string data type. Any data type written as text is a string. Any data under single, double or triple quote are strings. There are different string methods and built-in functions to deal with string data types. To check the length of a string use the len() method.
+Текст является строковым типом данных. Любой тип данных, записанный как текст, является строкой. Любые данные в одинарных, двойных или тройных кавычках являются строками. Существует множество методов строк и встроенных функций для работы со строковыми типами данных. Чтобы проверить длину строки, используйте метод len().
 
-### Creating a String
+### Создание строки
 
 ```py
-letter = 'P'                # A string could be a single character or a bunch of texts
+letter = 'P'                # Строка может быть одним символом или группой текстов
 print(letter)               # P
 print(len(letter))          # 1
-greeting = 'Hello, World!'  # String could be made using a single or double quote,"Hello, World!"
+greeting = 'Hello, World!'  # Строка может быть создана с использованием одинарных или двойных кавычек "Hello, World!"
 print(greeting)             # Hello, World!
 print(len(greeting))        # 13
 sentence = "I hope you are enjoying 30 days of Python Challenge"
 print(sentence)
 ```
 
-Multiline string is created by using triple single (''') or triple double quotes ("""). See the example below.
+Многострочная строка создается с использовани
+
+ем тройных одинарных (''') или тройных двойных кавычек ("""). Смотрите пример ниже.
 
 ```py
-multiline_string = '''I am a teacher and enjoy teaching.
-I didn't find anything as rewarding as empowering people.
-That is why I created 30 days of python.'''
+multiline_string = '''Я учитель и наслаждаюсь обучением.
+Я не нашел ничего такого же вознаграждающего, как властие над людьми.
+Вот почему я создал 30 дней python.'''
 print(multiline_string)
 
-# Another way of doing the same thing
-multiline_string = """I am a teacher and enjoy teaching.
-I didn't find anything as rewarding as empowering people.
-That is why I created 30 days of python."""
+# Другой способ сделать то же самое
+multiline_string = """Я учитель и наслаждаюсь обучением.
+Я не нашел ничего такого же вознаграждающего, как властие над людьми.
+Вот почему я создал 30 дней python."""
 print(multiline_string)
 ```
 
-### String Concatenation
+### Конкатенация строк
 
-We can connect strings together. Merging or connecting strings is called concatenation. See the example below:
+Мы можем соединять строки вместе. Объединение или соединение строк называется конкатенацией. Смотрите пример ниже:
 
 ```py
 first_name = 'Asabeneh'
 last_name = 'Yetayeh'
 space = ' '
-full_name = first_name  +  space + last_name
+full_name = first_name + space + last_name
 print(full_name) # Asabeneh Yetayeh
-# Checking the length of a string using len() built-in function
+# Проверка длины строки с помощью встроенной функции len()
 print(len(first_name))  # 8
 print(len(last_name))   # 7
 print(len(first_name) > len(last_name)) # True
 print(len(full_name)) # 16
 ```
 
-### Escape Sequences in Strings
+### Экранированные последовательности в строках
 
-In Python and other programming languages \ followed by a character is an escape sequence. Let us see the most common escape characters:
+В Python и других языках программирования \, за которым следует символ, является последовательностью экранирования. Давайте посмотрим на наиболее распространенные последовательности экранирования:
 
-- \n: new line
-- \t: Tab means(8 spaces)
-- \\\\: Back slash
-- \\': Single quote (')
-- \\": Double quote (")
+- \n: новая строка
+- \t: табуляция (8 пробелов)
+- \\\\: обратная косая черта
+- \\': одинарная кавычка (')
+- \\": двойная кавычка (")
 
-Now, let us see the use of the above escape sequences with examples.
+Теперь давайте посмотрим на использование вышеупомянутых последовательностей экранирования на примерах.
 
 ```py
-print('I hope everyone is enjoying the Python Challenge.\nAre you ?') # line break
-print('Days\tTopics\tExercises') # adding tab space or 4 spaces 
-print('Day 1\t5\t5')
-print('Day 2\t6\t20')
-print('Day 3\t5\t23')
-print('Day 4\t1\t35')
-print('This is a backslash  symbol (\\)') # To write a backslash
-print('In every programming language it starts with \"Hello, World!\"') # to write a double quote inside a single quote
+print('Я надеюсь, каждый наслаждается вызовом Python.\nВы?') # перенос строки
+print('Дни\tТемы\tУпражнения') # добавление табуляции или 4 пробелов
+print('День 1\t5\t5')
+print('День 2\t6\t20')
+print('День 3\t5\t23')
+print('День 4\t1\t35')
+print('Это символ обратной косой черты (\\)') # чтобы написать обратную косую черту
+print('На каждом языке программирования это начинается с \"Привет, мир!\"') # чтобы написать двойную кавычку внутри одинарной кавычки
 
-# output
-I hope every one is enjoying the Python Challenge.
-Are you ?
-Days	Topics	Exercises
-Day 1	5	    5
-Day 2	6	    20
-Day 3	5	    23
-Day 4	1	    35
-This is a backslash  symbol (\)
-In every programming language it starts with "Hello, World!"
+# вывод
+Я надеюсь, каждый наслаждается вызовом Python.
+Вы?
+Дни	Темы	Упражнения
+День 1	5	5
+День 2	6	20
+День 3	5	23
+День 4	1	35
+Это символ обратной косой черты (\)
+На каждом языке программирования это начинается с "Привет, мир!"
 ```
 
-### String formatting
+### Форматирование строк
 
-#### Old Style String Formatting (% Operator)
+#### Старый стиль форматирования строк (оператор %)
 
-In Python there are many ways of formatting strings. In this section, we will cover some of them.
-The "%" operator is used to format a set of variables enclosed in a "tuple" (a fixed size list), together with a format string, which contains normal text together with "argument specifiers", special symbols like "%s", "%d", "%f", "%.<small>number of digits</small>f".
+В Python существует множество способов форматирования строк. В этом разделе мы рассмотрим некоторые из них.
+Оператор "%" используется для форматирования набора переменных, заключенных в "кортеж" (список фиксированного размера), вместе со строкой формата, которая содержит обычный текст вместе со "спецификаторами аргументов", специ
 
-- %s - String (or any object with a string representation, like numbers)
-- %d - Integers
-- %f - Floating point numbers
-- "%.<small>number of digits</small>f" - Floating point numbers with fixed precision
+альными символами, такими как "%s", "%d", "%f", "%.<small>количество цифр</small>f".
+
+- %s - строка (или любой объект с строковым представлением, например числа)
+- %d - целые числа
+- %f - числа с плавающей точкой
+- "%.<small>количество цифр</small>f" - числа с плавающей точкой с фиксированной точностью
 
 ```py
-# Strings only
+# Только строки
 first_name = 'Asabeneh'
 last_name = 'Yetayeh'
 language = 'Python'
-formated_string = 'I am %s %s. I teach %s' %(first_name, last_name, language)
+formated_string = 'Я %s %s. Я учу %s' %(first_name, last_name, language)
 print(formated_string)
 
-# Strings  and numbers
+# Строки и числа
 radius = 10
 pi = 3.14
 area = pi * radius ** 2
-formated_string = 'The area of circle with a radius %d is %.2f.' %(radius, area) # 2 refers the 2 significant digits after the point
+formated_string = 'Площадь круга с радиусом %d равна %.2f.' %(radius, area) # 2 означает 2 значащие цифры после точки
 
 python_libraries = ['Django', 'Flask', 'NumPy', 'Matplotlib','Pandas']
-formated_string = 'The following are python libraries:%s' % (python_libraries)
-print(formated_string) # "The following are python libraries:['Django', 'Flask', 'NumPy', 'Matplotlib','Pandas']"
+formated_string = 'Следующие библиотеки Python:%s' % (python_libraries)
+print(formated_string) # "Следующие библиотеки Python:['Django', 'Flask', 'NumPy', 'Matplotlib','Pandas']"
 ```
 
-#### New Style String Formatting (str.format)
+#### Новый стиль форматирования строк (str.format)
 
-This formatting is introduced in Python version 3.
+Этот метод форматирования появился в Python версии 3.
 
 ```py
 
 first_name = 'Asabeneh'
 last_name = 'Yetayeh'
 language = 'Python'
-formated_string = 'I am {} {}. I teach {}'.format(first_name, last_name, language)
+formated_string = 'Я {} {}. Я учу {}'.format(first_name, last_name, language)
 print(formated_string)
 a = 4
 b = 3
@@ -169,12 +173,12 @@ b = 3
 print('{} + {} = {}'.format(a, b, a + b))
 print('{} - {} = {}'.format(a, b, a - b))
 print('{} * {} = {}'.format(a, b, a * b))
-print('{} / {} = {:.2f}'.format(a, b, a / b)) # limits it to two digits after decimal
+print('{} / {} = {:.2f}'.format(a, b, a / b)) # ограничивает до двух цифр после десятичной точки
 print('{} % {} = {}'.format(a, b, a % b))
 print('{} // {} = {}'.format(a, b, a // b))
 print('{} ** {} = {}'.format(a, b, a ** b))
 
-# output
+# вывод
 4 + 3 = 7
 4 - 3 = 1
 4 * 3 = 12
@@ -183,18 +187,18 @@ print('{} ** {} = {}'.format(a, b, a ** b))
 4 // 3 = 1
 4 ** 3 = 64
 
-# Strings  and numbers
+# Строки и числа
 radius = 10
 pi = 3.14
 area = pi * radius ** 2
-formated_string = 'The area of a circle with a radius {} is {:.2f}.'.format(radius, area) # 2 digits after decimal
+formated_string = 'Площадь круга с радиусом {} равна {:.2f}.'.format(radius, area) # 2 цифры после десятичной точки
 print(formated_string)
 
 ```
 
-#### String Interpolation / f-Strings (Python 3.6+)
+#### Интерполяция строк / f-строки (Python 3.6+)
 
-Another new string formatting is string interpolation, f-strings. Strings start with f and we can inject the data in their corresponding positions.
+Другой новый способ форматирования строк — интерполяция строк, f-строки. Строки начинаются с f, и мы можем вставлять данные в соответствующие позиции.
 
 ```py
 a = 4
@@ -208,15 +212,17 @@ print(f'{a} // {b} = {a // b}')
 print(f'{a} ** {b} = {a ** b}')
 ```
 
-### Python Strings as Sequences of Characters
+### Строки Python как последовательности символов
 
-Python strings are sequences of characters, and share their basic methods of access with other Python ordered sequences of objects – lists and tuples. The simplest way of extracting single characters from strings (and individual members from any sequence) is to unpack them into corresponding variables.
+Строки Python являются последовательностями символов и разделяют основные методы доступа с другими упорядоченными последовательностями объектов Python — списками
 
-#### Unpacking Characters
+и кортежами. Простейший способ извлечения отдельных символов из строк (и отдельных элементов из любой последовательности) — это распаковка их в соответствующие переменные.
+
+#### Распаковка символов
 
 ```
 language = 'Python'
-a,b,c,d,e,f = language # unpacking sequence characters into variables
+a,b,c,d,e,f = language # распаковка символов последовательности в переменные
 print(a) # P
 print(b) # y
 print(c) # t
@@ -225,11 +231,11 @@ print(e) # o
 print(f) # n
 ```
 
-#### Accessing Characters in Strings by Index
+#### Доступ к символам в строках по индексу
 
-In programming counting starts from zero. Therefore the first letter of a string is at zero index and the last letter of a string is the length of a string minus one.
+В программировании счет начинается с нуля. Поэтому первая буква строки находится по индексу ноль, а последняя буква строки — это длина строки минус один.
 
-![String index](../images/string_index.png)
+![Индекс строки](../images/string_index.png)
 
 ```py
 language = 'Python'
@@ -242,7 +248,7 @@ last_letter = language[last_index]
 print(last_letter) # n
 ```
 
-If we want to start from right end we can use negative indexing. -1 is the last index.
+Если мы хотим начать с правого конца, мы можем использовать отрицательные индексы. -1 — это последний индекс.
 
 ```py
 language = 'Python'
@@ -252,35 +258,35 @@ second_last = language[-2]
 print(second_last) # o
 ```
 
-#### Slicing Python Strings
+#### Срезы строк в Python
 
-In python we can slice strings into substrings.
+В Python мы можем разрезать строки на подстроки.
 
 ```py
 language = 'Python'
-first_three = language[0:3] # starts at zero index and up to 3 but not include 3
-print(first_three) #Pyt
+first_three = language[0:3] # начинается с нулевого индекса и до 3, но не включает 3
+print(first_three) # Pyt
 last_three = language[3:6]
 print(last_three) # hon
-# Another way
+# Другой способ
 last_three = language[-3:]
 print(last_three)   # hon
 last_three = language[3:]
 print(last_three)   # hon
 ```
 
-#### Reversing a String
+#### Переворот строки
 
-We can easily reverse strings in python.
+Мы можем легко перевернуть строки в Python.
 
 ```py
 greeting = 'Hello, World!'
 print(greeting[::-1]) # !dlroW ,olleH
 ```
 
-#### Skipping Characters While Slicing
+#### Пропуск символов при срезе
 
-It is possible to skip characters while slicing by passing step argument to slice method.
+Можно пропустить символы при срезе, передав аргумент шага методу среза.
 
 ```py
 language = 'Python'
@@ -288,139 +294,143 @@ pto = language[0:6:2] #
 print(pto) # Pto
 ```
 
-### String Methods
+### Методы строк
 
-There are many string methods which allow us to format strings. See some of the string methods in the following example:
+Существует множество методов строк, которые позволяют форматировать строки. Смотрите некоторые из методов строк в следующем примере:
 
-- capitalize(): Converts the first character of the string to capital letter
+- capitalize(): преобразует первый символ строки в заглавную букву
 
 ```py
-challenge = 'thirty days of python'
-print(challenge.capitalize()) # 'Thirty days of python'
+challenge = 'тридцать дней python'
+print(challenge.capitalize()) # 'Тридцать дней python'
 ```
 
-- count(): returns occurrences of substring in string, count(substring, start=.., end=..). The start is a starting indexing for counting and end is the last index to count.
+- count(): возвращает количество вхождений подстроки в строку, count(подстрока, начало=.., конец=..). Начало — это начальный индекс для подсчета, а конец — это последний индекс для подсчета.
 
 ```py
-challenge = 'thirty days of python'
+challenge = 'тридцать дней python'
 print(challenge.count('y')) # 3
-print(challenge.count('y', 7, 14)) # 1, 
+print(challenge.count('y', 7, 14)) # 1,
 print(challenge.count('th')) # 2`
 ```
 
-- endswith(): Checks if a string ends with a specified ending
+- endswith(): проверяет, заканчивается ли строка указанным окончанием
 
 ```py
-challenge = 'thirty days of python'
+challenge = 'тридцать дней python'
 print(challenge.endswith('on'))   # True
 print(challenge.endswith('tion')) # False
 ```
 
-- expandtabs(): Replaces tab character with spaces, default tab size is 8. It takes tab size argument
+- expandtabs(): заменяет символ табуляции на пробелы, размер табуляции по умолчанию — 8. Принимает аргумент размера табуляции
 
 ```py
-challenge = 'thirty\tdays\tof\tpython'
-print(challenge.expandtabs())   # 'thirty  days    of      python'
-print(challenge.expandtabs(10)) # 'thirty    days      of        python'
+challenge = 'тридцать\tdни\tof\tpython'
+print(challenge.expandtabs())   # 'тридцать  дни    of      python
+
+'
+print(challenge.expandtabs(10)) # 'тридцать    дни      of        python'
 ```
 
-- find(): Returns the index of the first occurrence of a substring, if not found returns -1
+- find(): возвращает индекс первого вхождения подстроки, если не найдено, возвращает -1
 
 ```py
-challenge = 'thirty days of python'
+challenge = 'тридцать дней python'
 print(challenge.find('y'))  # 5
 print(challenge.find('th')) # 0
 ```
 
-- rfind(): Returns the index of the last occurrence of a substring, if not found returns -1
+- rfind(): возвращает индекс последнего вхождения подстроки, если не найдено, возвращает -1
 
 ```py
-challenge = 'thirty days of python'
+challenge = 'тридцать дней python'
 print(challenge.rfind('y'))  # 16
 print(challenge.rfind('th')) # 17
 ```
 
-- format(): formats string into a nicer output  
-   More about string formatting check this [link](https://www.programiz.com/python-programming/methods/string/format)
+- format(): форматирует строку для более красивого вывода  
+   Больше о форматировании строк читайте по этой [ссылке](https://www.programiz.com/python-programming/methods/string/format)
 
 ```py
 first_name = 'Asabeneh'
 last_name = 'Yetayeh'
 age = 250
-job = 'teacher'
-country = 'Finland'
-sentence = 'I am {} {}. I am a {}. I am {} years old. I live in {}.'.format(first_name, last_name, age, job, country)
-print(sentence) # I am Asabeneh Yetayeh. I am 250 years old. I am a teacher. I live in Finland.
+job = 'учитель'
+country = 'Финляндия'
+sentence = 'Я {} {}. Мне {} лет. Я {}. Я живу в {}.'.format(first_name, last_name, age, job, country)
+print(sentence) # Я Asabeneh Yetayeh. Мне 250 лет. Я учитель. Я живу в Финляндии.
 
 radius = 10
 pi = 3.14
 area = pi * radius ** 2
-result = 'The area of a circle with radius {} is {}'.format(str(radius), str(area))
-print(result) # The area of a circle with radius 10 is 314
+result = 'Площадь круга с радиусом {} составляет {}'.format(str(radius), str(area))
+print(result) # Площадь круга с радиусом 10 составляет 314
 ```
 
-- index(): Returns the lowest index of a substring, additional arguments indicate starting and ending index (default 0 and string length - 1). If the substring is not found it raises a valueError. 
+- index(): возвращает наименьший индекс подстроки, дополнительные аргументы указывают начальный и конечный индекс (по умолчанию 0 и длина строки - 1). Если подстрока не найдена, выдает ошибку ValueError.
 
 ```py
-challenge = 'thirty days of python'
+challenge = 'тридцать дней python'
 sub_string = 'da'
 print(challenge.index(sub_string))  # 7
-print(challenge.index(sub_string, 9)) # error
+print(challenge.index(sub_string, 9)) # ошибка
 ```
 
-- rindex(): Returns the highest index of a substring, additional arguments indicate starting and ending index (default 0 and string length - 1)
+- rindex(): возвращает наибольший индекс подстроки, дополнительные аргументы указывают начальный и конечный индекс (по умолчанию 0 и длина строки - 1)
 
 ```py
-challenge = 'thirty days of python'
+challenge = 'тридцать дней python'
 sub_string = 'da'
 print(challenge.rindex(sub_string))  # 8
-print(challenge.rindex(sub_string, 9)) # error
+print(challenge.rindex(sub_string, 9)) # ошибка
 ```
 
-- isalnum(): Checks alphanumeric character
+- isalnum(): проверяет алфавитно-цифровой символ
 
 ```py
-challenge = 'ThirtyDaysPython'
+challenge = 'ТридцатьДнейPython'
 print(challenge.isalnum()) # True
 
 challenge = '30DaysPython'
 print(challenge.isalnum()) # True
 
-challenge = 'thirty days of python'
-print(challenge.isalnum()) # False, space is not an alphanumeric character
+challenge = 'тридцать дней python'
+print(challenge.isalnum()) # False, пробел не является алфавитно-цифровым символом
 
-challenge = 'thirty days of python 2019'
+challenge = 'тридцать дней python 2019'
 print(challenge.isalnum()) # False
 ```
 
-- isalpha(): Checks if all string elements are alphabet characters (a-z and A-Z)
+- isalpha(): проверяет, все ли элементы строки являются алфавитными символами (a-z и A-Z)
 
 ```py
-challenge = 'thirty days of python'
-print(challenge.isalpha()) # False, space is once again excluded
-challenge = 'ThirtyDaysPython'
+challenge = 'тридцать дней python'
+print(challenge.isalpha()) # False, пробел снова исключен
+challenge = 'ТридцатьДнейPython'
 print(challenge.isalpha()) # True
 num = '123'
 print(num.isalpha())      # False
 ```
 
-- isdecimal(): Checks if all characters in a string are decimal (0-9)
+- isdecimal(): проверяет, все ли символы в строке являются десятичными (0-9)
 
 ```py
-challenge = 'thirty days of python'
+challenge = 'тридцать дней python'
 print(challenge.isdecimal())  # False
 challenge = '123'
 print(challenge.isdecimal())  # True
 challenge = '\u00B2'
 print(challenge.isdigit())   # False
 challenge = '12 3'
-print(challenge.isdecimal())  # False, space not allowed
+print(challenge.isdecimal())  # False, пробел не д
+
+опускается
 ```
 
-- isdigit(): Checks if all characters in a string are numbers (0-9 and some other unicode characters for numbers)
+- isdigit(): проверяет, все ли символы в строке являются числами (0-9 и некоторые другие символы Юникода для чисел)
 
 ```py
-challenge = 'Thirty'
+challenge = 'Тридцать'
 print(challenge.isdigit()) # False
 challenge = '30'
 print(challenge.isdigit())   # True
@@ -428,7 +438,7 @@ challenge = '\u00B2'
 print(challenge.isdigit())   # True
 ```
 
-- isnumeric(): Checks if all characters in a string are numbers or number related (just like isdigit(), just accepts more symbols, like ½)
+- isnumeric(): проверяет, все ли символы в строке являются числами или связанными с числами символами (подобно isdigit(), только принимает больше символов, например ½)
 
 ```py
 num = '10'
@@ -439,34 +449,34 @@ num = '10.5'
 print(num.isnumeric()) # False
 ```
 
-- isidentifier(): Checks for a valid identifier - it checks if a string is a valid variable name
+- isidentifier(): проверяет допустимый идентификатор - проверяет, является ли строка допустимым именем переменной
 
 ```py
 challenge = '30DaysOfPython'
-print(challenge.isidentifier()) # False, because it starts with a number
-challenge = 'thirty_days_of_python'
+print(challenge.isidentifier()) # False, потому что начинается с числа
+challenge = 'тридцать_дней_python'
 print(challenge.isidentifier()) # True
 ```
 
-- islower(): Checks if all alphabet characters in the string are lowercase
+- islower(): проверяет, все ли алфавитные символы в строке в нижнем регистре
 
 ```py
-challenge = 'thirty days of python'
+challenge = 'тридцать дней python'
 print(challenge.islower()) # True
-challenge = 'Thirty days of python'
+challenge = 'Тридцать дней python'
 print(challenge.islower()) # False
 ```
 
-- isupper(): Checks if all alphabet characters in the string are uppercase
+- isupper(): проверяет, все ли алфавитные символы в строке в верхнем регистре
 
 ```py
-challenge = 'thirty days of python'
+challenge = 'тридцать дней python'
 print(challenge.isupper()) #  False
-challenge = 'THIRTY DAYS OF PYTHON'
+challenge = 'ТРИДЦАТЬ ДНЕЙ PYTHON'
 print(challenge.isupper()) # True
 ```
 
-- join(): Returns a concatenated string
+- join(): возвращает объединенную строку
 
 ```py
 web_tech = ['HTML', 'CSS', 'JavaScript', 'React']
@@ -480,112 +490,104 @@ result = '# '.join(web_tech)
 print(result) # 'HTML# CSS# JavaScript# React'
 ```
 
-- strip(): Removes all given characters starting from the beginning and end of the string
+- strip(): удаляет все указанные символы, начиная с начала и конца строки
 
 ```py
-challenge = 'thirty days of pythoonnn'
+challenge = 'тридцать дней pythoonnn'
 print(challenge.strip('noth')) # 'irty days of py'
 ```
 
-- replace(): Replaces substring with a given string
+- replace(): заменяет подстроку на указанную строку
 
 ```py
-challenge = 'thirty days of python'
-print(challenge.replace('python', 'coding')) # 'thirty days of coding'
+challenge = 'тридцать дней python'
+print(challenge.replace('python', 'кодинг')) # 'тридцать дней кодинга'
 ```
 
-- split(): Splits the string, using given string or space as a separator
+- split(): разделяет строку, используя указанную строку или пробел в качестве разделителя
 
 ```py
-challenge = 'thirty days of python'
-print(challenge.split()) # ['thirty', 'days', 'of', 'python']
-challenge = 'thirty, days, of, python'
-print(challenge.split(', ')) # ['thirty', 'days', 'of', 'python']
+challenge = 'тридцать дней python'
+print(challenge.split()) # ['тридцать', 'дней', 'python']
+challenge = 'тридцать, дней, python'
+print(challenge.split(', ')) # ['тридцать', 'дней', 'python']
 ```
 
-- title(): Returns a title cased string
+- title(): возвращает строку с заглавными буквами каждого слова
 
 ```py
-challenge = 'thirty days of python'
-print(challenge.title()) # Thirty Days Of Python
+challenge = 'тридцать дней python'
+print(challenge.title()) # Тридцать Дней Python
 ```
 
-- swapcase(): Converts all uppercase characters to lowercase and all lowercase characters to uppercase characters
+- swapcase(): преобразует все символы в верхнем регистре в нижний и все символы в нижнем регистре в верхний
 
 ```py
-challenge = 'thirty days of python'
-print(challenge.swapcase())   # THIRTY DAYS OF PYTHON
-challenge = 'Thirty Days Of Python'
-print(challenge.swapcase())  # tHIRTY dAYS oF pYTHON
+challenge = 'тридцать дней python'
+print(challenge.swapcase())   # ТРИДЦАТЬ ДНЕЙ PYTHON
+challenge = 'Тридцать Дней Python'
+print(challenge.swapcase())  # тридцать дней пYTHON
 ```
 
-- startswith(): Checks if String Starts with the Specified String
+- startswith(): проверяет, начинается ли строка с указанной подстроки
 
 ```py
-challenge = 'thirty days of python'
-print(challenge.startswith('thirty')) # True
+challenge =
 
-challenge = '30 days of python'
-print(challenge.startswith('thirty')) # False
+ 'тридцать дней python'
+print(challenge.startswith('тридцать')) # True
+
+challenge = '30 дней python'
+print(challenge.startswith('тридцать')) # False
 ```
 
-🌕 You are an extraordinary person and you have a remarkable potential. You have just completed day 4 challenges and you are four steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
+🌕 Вы необыкновенный человек, и у вас огромный потенциал. Вы только что завершили вызовы четвертого дня, и вы на четыре шага впереди на пути к величию. Теперь поработайте над упражнениями для вашего мозга и мышц.
 
-## 💻 Exercises - Day 4
+## 💻 Упражнения - День 4
 
-1. Concatenate the string 'Thirty', 'Days', 'Of', 'Python' to a single string, 'Thirty Days Of Python'.
-2. Concatenate the string 'Coding', 'For' , 'All' to a single string, 'Coding For All'.
-3. Declare a variable named company and assign it to an initial value "Coding For All".
-4. Print the variable company using _print()_.
-5. Print the length of the company string using _len()_ method and _print()_.
-6. Change all the characters to uppercase letters using _upper()_ method.
-7. Change all the characters to lowercase letters using _lower()_ method.
-8. Use capitalize(), title(), swapcase() methods to format the value of the string _Coding For All_.
-9. Cut(slice) out the first word of _Coding For All_ string.
-10. Check if _Coding For All_ string contains a word Coding using the method index, find or other methods.
-11. Replace the word coding in the string 'Coding For All' to Python.
-12. Change Python for Everyone to Python for All using the replace method or other methods.
-13. Split the string 'Coding For All' using space as the separator (split()) .
-14. "Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon" split the string at the comma.
-15. What is the character at index 0 in the string _Coding For All_.
-16. What is the last index of the string _Coding For All_.
-17. What character is at index 10 in "Coding For All" string.
-18. Create an acronym or an abbreviation for the name 'Python For Everyone'.
-19. Create an acronym or an abbreviation for the name 'Coding For All'.
-20. Use index to determine the position of the first occurrence of C in Coding For All.
-21. Use index to determine the position of the first occurrence of F in Coding For All.
-22. Use rfind to determine the position of the last occurrence of l in Coding For All People.
-23. Use index or find to find the position of the first occurrence of the word 'because' in the following sentence: 'You cannot end a sentence with because because because is a conjunction'
-24. Use rindex to find the position of the last occurrence of the word because in the following sentence: 'You cannot end a sentence with because because because is a conjunction'
-25. Slice out the phrase 'because because because' in the following sentence: 'You cannot end a sentence with because because because is a conjunction'
-26. Find the position of the first occurrence of the word 'because' in the following sentence: 'You cannot end a sentence with because because because is a conjunction'
-27. Slice out the phrase 'because because because' in the following sentence: 'You cannot end a sentence with because because because is a conjunction'
-28. Does '\'Coding For All' start with a substring _Coding_?
-29. Does 'Coding For All' end with a substring _coding_?
-30. '&nbsp;&nbsp; Coding For All &nbsp;&nbsp;&nbsp; &nbsp;' &nbsp;, remove the left and right trailing spaces in the given string.
-31. Which one of the following variables return True when we use the method isidentifier():
-    - 30DaysOfPython
-    - thirty_days_of_python
-32. The following list contains the names of some of python libraries: ['Django', 'Flask', 'Bottle', 'Pyramid', 'Falcon']. Join the list with a hash with space string.
-33. Use the new line escape sequence to separate the following sentences.
-    ```py
-    I am enjoying this challenge.
-    I just wonder what is next.
-    ```
-34. Use a tab escape sequence to write the following lines.
-    ```py
-    Name      Age     Country   City
-    Asabeneh  250     Finland   Helsinki
-    ```
-35. Use the string formatting method to display the following:
+1. Соедините строки 'Тридцать', 'Дней', 'Python' в одну строку, 'Тридцать Дней Python'.
+2. Соедините строки 'Кодирование', 'Для' , 'Всех' в одну строку, 'Кодирование для всех'.
+3. Объявите переменную с именем company и присвоите ей начальное значение "Кодирование для всех".
+4. Выведите переменную company с помощью _print()_.
+5. Выведите длину строки company с помощью метода _len()_ и _print()_.
+6. Измените все символы на заглавные буквы с помощью метода _upper()_.
+7. Измените все символы на строчные буквы с помощью метода _lower()_.
+8. Используйте методы capitalize(), title(), swapcase() для форматирования значения строки _Кодирование для всех_.
+9. Вырежьте(срежьте) первое слово строки _Кодирование для всех_.
+10. Проверьте, содержит ли строка _Кодирование для всех_ слово Кодирование с помощью метода index, find или других методов.
+11. Замените слово кодирование в строке 'Кодирование для всех' на Python.
+12. Измените Python для всех на Python для всех, используя метод replace или другие методы.
+13. Разделите строку 'Кодирование для всех' с использованием пробела в качестве разделителя (split()).
+14. "Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon" разделите строку по запятой.
+15. Какой символ находится по индексу 0 в строке _Кодирование для всех_.
+16. Какой последний индекс строки _Кодирование для всех_.
+17. Какой символ находится по индексу 10 в строке "Кодирование для всех".
+18. Создайте аббревиатуру или аббревиатуру для названия 'Python для всех'.
+19. Создайте аббревиатуру или аббревиатуру для названия 'Кодирование для всех'.
+20. Используйте index, чтобы определить позицию первого вхождения C в Кодирование для всех.
+21. Используйте index, чтобы определить позицию первого вхождения F в Кодирование для всех.
+22. Используйте rfind, чтобы определить позицию последнего вхождения l в Кодирование для всех людей.
+23. Используйте index или find, чтобы найти позицию первого вхождения слова 'потому что' в следующем предложении: 'Вы не можете закончить предложение с потому что потому что потому что это союз'
+24. Используйте rindex, чтобы найти позицию последнего вхождения слова потому что в следующем предложении: 'Вы не можете закончить предложение с потому что потому что потому что это союз'
+25. Вырежьте фразу 'потому что потому что потому что' в следующем предложении: '
+
+Вы не можете закончить предложение с потому что потому что потому что это союз' 26. Найдите позицию первого вхождения слова 'потому что' в следующем предложении: 'Вы не можете закончить предложение с потому что потому что потому что это союз' 27. Вырежьте фразу 'потому что потому что потому что' в следующем предложении: 'Вы не можете закончить предложение с потому что потому что потому что это союз' 28. Начинается ли '*Кодирование для всех' с подстроки *Кодирование*? 29. Заканчивается ли 'Кодирование для всех' подстрокой *кодирование\_? 30. '&nbsp;&nbsp; Кодирование для всех &nbsp;&nbsp;&nbsp; &nbsp;' &nbsp;, удалите левые и правые конечные пробелы в данной строке. 31. Какая из следующих переменных возвращает True, когда мы используем метод isidentifier(): - 30DaysOfPython - thirty_days_of_python 32. Следующий список содержит названия некоторых библиотек Python: ['Django', 'Flask', 'Bottle', 'Pyramid', 'Falcon']. Объедините список с помощью хэша с пробелом. 33. Используйте последовательность новой строки для разделения следующих предложений.
+`py
+    Мне нравится этот вызов.
+    Мне просто интересно, что будет дальше.
+    ` 34. Используйте последовательность табуляции для записи следующих строк.
+`py
+    Имя      Возраст     Страна   Город
+    Асабенех  250     Финляндия   Хельсинки
+    ` 35. Используйте метод форматирования строк, чтобы отобразить следующее:
 
 ```sh
 radius = 10
 area = 3.14 * radius ** 2
-The area of a circle with radius 10 is 314 meters square.
+Площадь круга с радиусом 10 составляет 314 квадратных метров.
 ```
 
-36. Make the following using string formatting methods:
+36. Сделайте следующее с использованием методов форматирования строк:
 
 ```sh
 8 + 6 = 14
@@ -597,8 +599,6 @@ The area of a circle with radius 10 is 314 meters square.
 8 ** 6 = 262144
 ```
 
-🎉 CONGRATULATIONS ! 🎉
+🎉 ПОЗДРАВЛЯЕМ ! 🎉
 
-[<< Day 3](../03_Day_Operators/03_operators.md) | [Day 5 >>](../05_Day_Lists/05_lists.md)
-
-
+[<< День 3](../03_Day_Operators/03_operators.md) | [День 5 >>](../05_Day_Lists/05_lists.md)
