@@ -1,25 +1,25 @@
 <div align="center">
-  <h1> 30 Days Of Python: Day 9 - Conditionals</h1>
+  <h1>30 дней Python: День 9 - Условные операторы</h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
-  <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
+    <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
   </a>
   <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
-  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
+    <img alt="Подписка на Twitter" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
   </a>
 
-<sub>Author:
-<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> Second Edition: July, 2021</small>
+<sub>Автор:
+<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Асабенех Йетаех</a><br>
+<small> Второе издание: Июль, 2021</small>
 </sub>
 
 </div>
 
-[<< Day 8](../08_Day_Dictionaries/08_dictionaries.md) | [Day 10 >>](../10_Day_Loops/10_loops.md)
+[<< День 8](../08_Day_Dictionaries/08_dictionaries.md) | [День 10 >>](../10_Day_Loops/10_loops.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 9](#-day-9)
-  - [Conditionals](#conditionals)
+- [📘 День 9](#-день-9)
+  - [Условные операторы](#условные-операторы)
     - [If Condition](#if-condition)
     - [If Else](#if-else)
     - [If Elif Else](#if-elif-else)
@@ -27,252 +27,255 @@
     - [Nested Conditions](#nested-conditions)
     - [If Condition and Logical Operators](#if-condition-and-logical-operators)
     - [If and Or Logical Operators](#if-and-or-logical-operators)
-  - [💻 Exercises: Day 9](#-exercises-day-9)
-    - [Exercises: Level 1](#exercises-level-1)
+  - [💻 Упражнения: День 9](#-упражнения-день-9)
+    - [Упражнения: Уровень 1](#упражнения-уровень-1)
 
-# 📘 Day 9
+# 📘 День 9
 
-## Conditionals
+## Условные операторы
 
-By default, statements in Python script are executed sequentially from top to bottom. If the processing logic require so, the sequential flow of execution can be altered in two way:
+Как правило, операторы в скрипте Python выполняются последовательно сверху вниз. Если логика обработки требует изменения последовательного потока выполнения, его можно изменить двумя способами:
 
-- Conditional execution: a block of one or more statements will be executed if a certain expression is true
-- Repetitive execution: a block of one or more statements will be repetitively executed as long as a certain expression is true. In this section, we will cover _if_, _else_, _elif_ statements. The comparison and logical operators we learned in previous sections will be useful here.
+- Условное выполнение: блок из одного или нескольких операторов будет выполнен, если определенное выражение является истинным.
+- Повторное выполнение: блок из одного или нескольких операторов будет повторно выполняться, пока определенное выражение является истинным. В этом разделе мы рассмотрим операторы _if_, _else_, _elif_. Операторы сравнения и логические операторы, которые мы изучили в предыдущих разделах, будут полезны здесь.
 
 ### If Condition
 
-In python and other programming languages the key word _if_ is used to check if a condition is true and to execute the block code. Remember the indentation after the colon.
+В Python и других языках программирования ключевое слово _if_ используется для проверки истиности условия и выполнения блока кода. Не забывайте про отступ после двоеточия.
 
 ```py
-# syntax
-if condition:
-    this part of code runs for truthy conditions
+# синтаксис
+if условие:
+    этот блок кода выполняется для истинных условий
 ```
 
-**Example: 1**
+**Пример: 1**
 
 ```py
 a = 3
 if a > 0:
-    print('A is a positive number')
-# A is a positive number
+    print('A - положительное число')
+# A - положительное число
 ```
 
-As you can see in the example above, 3 is greater than 0. The condition was true and the block code was executed. However, if the condition is false, we do not see the result. In order to see the result of the falsy condition, we should have another block, which is going to be _else_.
+Как видите в примере выше, 3 больше 0. Условие было истинным и блок кода был выполнен. Однако, если условие ложно, мы не увидим результат. Чтобы увидеть результат ложного условия, нам следует использовать другой блок, который будет _else_.
 
 ### If Else
 
-If condition is true the first block will be executed, if not the else condition will run.
+Если условие истинно, будет выполнен первый блок, если нет — будет выполнен блок else.
 
 ```py
-# syntax
-if condition:
-    this part of code runs for truthy conditions
-else:
-     this part of code runs for false conditions
+# синтаксис
+if условие:
+    этот блок кода выполняется для истинных условий
+else
+
+:
+     этот блок кода выполняется для ложных условий
 ```
 
-**Example: **
+**Пример:**
 
 ```py
 a = 3
 if a < 0:
-    print('A is a negative number')
+    print('A - отрицательное число')
 else:
-    print('A is a positive number')
+    print('A - положительное число')
 ```
 
-The condition above proves false, therefore the else block was executed. How about if our condition is more than two? We could use _ elif_.
+Условие выше оказалось ложным, поэтому был выполнен блок else. Что, если наше условие более чем два? Мы могли бы использовать _elif_.
 
 ### If Elif Else
 
-In our daily life, we make decisions on daily basis. We make decisions not by checking one or two conditions but multiple conditions. As similar to life, programming is also full of conditions. We use _elif_ when we have multiple conditions.
+В нашей повседневной жизни мы принимаем решения ежедневно. Мы принимаем решения не только проверяя одно или два условия, но и множество условий. Так же, как в жизни, и в программировании полно условий. Мы используем _elif_, когда у нас есть несколько условий.
 
 ```py
-# syntax
-if condition:
-    code
-elif condition:
-    code
+# синтаксис
+if условие:
+    код
+elif условие:
+    код
 else:
-    code
+    код
 
 ```
 
-**Example: **
+**Пример:**
 
 ```py
 a = 0
 if a > 0:
-    print('A is a positive number')
+    print('A - положительное число')
 elif a < 0:
-    print('A is a negative number')
+    print('A - отрицательное число')
 else:
-    print('A is zero')
+    print('A равно нулю')
 ```
 
 ### Short Hand
 
 ```py
-# syntax
-code if condition else code
+# синтаксис
+код if условие else код
 ```
 
-**Example: **
+**Пример:**
 
 ```py
 a = 3
-print('A is positive') if a > 0 else print('A is negative') # first condition met, 'A is positive' will be printed
+print('A положительное') if a > 0 else print('A отрицательное') # первое условие выполнено, будет напечатано 'A положительное'
 ```
 
 ### Nested Conditions
 
-Conditions can be nested
+Условия могут быть вложенными
 
 ```py
-# syntax
-if condition:
-    code
-    if condition:
-    code
+# синтаксис
+if условие:
+    код
+    if условие:
+    код
 ```
 
-**Example: **
+**Пример:**
 
 ```py
 a = 0
 if a > 0:
     if a % 2 == 0:
-        print('A is a positive and even integer')
+        print('A - положительное и четное число')
     else:
-        print('A is a positive number')
+        print('A - положительное число')
 elif a == 0:
-    print('A is zero')
+    print('A равно нулю')
 else:
-    print('A is a negative number')
+    print('A - отрицательное число')
 
 ```
 
-We can avoid writing nested condition by using logical operator _and_.
+Мы можем избежать написания вложенного условия, используя логический оператор _and_.
 
 ### If Condition and Logical Operators
 
 ```py
-# syntax
-if condition and condition:
-    code
+# синтаксис
+if условие и условие:
+    код
 ```
 
-**Example: **
+**Пример:**
 
 ```py
 a = 0
 if a > 0 and a % 2 == 0:
-        print('A is an even and positive integer')
+        print('A - четное и положительное число')
 elif a > 0 and a % 2 !=  0:
-     print('A is a positive integer')
+     print('A - положительное число')
 elif a == 0:
-    print('A is zero')
+    print('A равно нулю')
 else:
-    print('A is negative')
+    print('A - отрицательное число')
 ```
 
 ### If and Or Logical Operators
 
 ```py
-# syntax
-if condition or condition:
-    code
+# синтаксис
+if условие или условие:
+    код
 ```
 
-**Example: **
+**Пример:**
 
 ```py
 user = 'James'
 access_level = 3
-if user == 'admin' or access_level >= 4:
-        print('Access granted!')
+if user == 'admin' или access_level >= 4:
+        print('Доступ разрешен!')
 else:
-    print('Access denied!')
+    print('Доступ запрещен!')
 ```
 
-🌕 You are doing great.Never give up because great things take time. You have just completed day 9 challenges and you are 9 steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
+🌕 Вы прекрасно справляетесь. Никогда не сдавайтесь, потому что на великие дела нужно время. Вы только что завершили задания девятого дня и на девять шагов впереди на пути к величию. Теперь поработайте над упражнениями для вашего мозга и мышц.
 
-## 💻 Exercises: Day 9
+## 💻 Упражнения: День 9
 
-### Exercises: Level 1
+### Упражнения: Уровень 1
 
-1.  Get user input using input(“Enter your age: ”). If user is 18 or older, give feedback: You are old enough to drive. If below 18 give feedback to wait for the missing amount of years. Output:
-    ```sh
-    Enter your age: 30
-    You are old enough to learn to drive.
-    Output:
-    Enter your age: 15
-    You need 3 more years to learn to drive.
-    ```
-2.  Compare the values of my_age and your_age using if … else. Who is older (me or you)? Use input(“Enter your age: ”) to get the age as input. You can use a nested condition to print 'year' for 1 year difference in age, 'years' for bigger differences, and a custom text if my_age = your_age. Output:
-    ```sh
-    Enter your age: 30
-    You are 5 years older than me.
-    ```
-3.  Get two numbers from the user using input prompt. If a is greater than b return a is greater than b, if a is less b return a is smaller than b, else a is equal to b. Output:
+1. Получите возраст пользователя с помощью input("Введите ваш возраст: "). Если пользователю 18 или больше, дайте обратную связь: Вы достаточно взрослы, чтобы водить машину. Если меньше 18, дайте обратную
+
+связь, чтобы подождать недостающее количество лет. Вывод:
+`sh
+    Введите ваш возраст: 30
+    Вы достаточно взрослы, чтобы учиться вождению.
+    Вывод:
+    Введите ваш возраст: 15
+    Вам нужно еще 3 года, чтобы научиться водить.
+    ` 2. Сравните значения my_age и your_age с использованием if ... else. Кто старше (я или вы)? Используйте input("Введите ваш возраст: ") чтобы получить возраст в виде ввода. Вы можете использовать вложенное условие, чтобы напечатать 'год' для разницы в возрасте в 1 год, 'года' для больших различий и пользовательский текст, если my_age = your_age. Вывод:
+`sh
+    Введите ваш возраст: 30
+    Вы на 5 лет старше меня.
+    ` 3. Получите два числа от пользователя с помощью запроса input. Если a больше b верните a больше b, если a меньше b верните a меньше b, иначе a равно b. Вывод:
 
 ```sh
-Enter number one: 4
-Enter number two: 3
-4 is greater than 3
+Введите число один: 4
+Введите число два: 3
+4 больше чем 3
 ```
 
-    ### Exercises: Level 2
+### Упражнения: Уровень 2
 
-   1. Write a code which gives grade to students according to theirs scores:
-   
-        ```sh
-        80-100, A
-        70-89, B
-        60-69, C
-        50-59, D
-        0-49, F
-        ```
-1. Check if the season is Autumn, Winter, Spring or Summer. If the user input is:
-    September, October or November, the season is Autumn.
-    December, January or February, the season is Winter.
-    March, April or May, the season is Spring
-    June, July or August, the season is Summer
-2.  The following list contains some fruits:
-    ```sh
-    fruits = ['banana', 'orange', 'mango', 'lemon']
-    ```
-    If a fruit doesn't exist in the list add the fruit to the list and print the modified list. If the fruit exists print('That fruit already exist in the list') 
+1. **Напишите код, который выставляет оценки студентам в зависимости от их баллов:**
 
-    ### Exercises: Level 3
+   ```sh
+   80-100, A
+   70-89, B
+   60-69, C
+   50-59, D
+   0-49, F
+   ```
 
-   1. Here we have a person dictionary. Feel free to modify it!
-   
-```py
-        person={
-    'first_name': 'Asabeneh',
-    'last_name': 'Yetayeh',
-    'age': 250,
-    'country': 'Finland',
-    'is_marred': True,
-    'skills': ['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
-    'address': {
-        'street': 'Space street',
-        'zipcode': '02210'
-    }
-    }
-```
+2. **Проверьте, какой сезон на дворе в зависимости от введенного месяца:**
 
-     * Check if the person dictionary has skills key, if so print out the middle skill in the skills list.
-     * Check if the person dictionary has skills key, if so check if the person has 'Python' skill and print out the result.
-     * If a person skills has only JavaScript and React, print('He is a front end developer'), if the person skills has Node, Python, MongoDB, print('He is a backend developer'), if the person skills has React, Node and MongoDB, Print('He is a fullstack developer'), else print('unknown title') - for more accurate results more conditions can be nested!
-     * If the person is married and if he lives in Finland, print the information in the following format:
+   - Сентябрь, Октябрь или Ноябрь, сезон осень.
+   - Декабрь, Январь или Февраль, сезон зима.
+   - Март, Апрель или Май, сезон весна.
+   - Июнь, Июль или Август, сезон лето.
 
-```py
-    Asabeneh Yetayeh lives in Finland. He is married.
-```
+3. **В следующем списке содержатся некоторые фрукты:**
+   ```sh
+   fruits = ['banana', 'orange', 'mango', 'lemon']
+   ```
+   Если фрукт не существует в списке, добавьте его в список и напечатайте измененный список. Если фрукт существует, напечатайте ('Этот фрукт уже есть в списке').
 
-🎉 CONGRATULATIONS ! 🎉
+### Упражнения: Уровень 3
 
-[<< Day 8](../08_Day_Dictionaries/08_dictionaries.md) | [Day 10 >>](../10_Day_Loops/10_loops.md)
+1. **Здесь представлен словарь человека. Не стесняйтесь его изменять:**
+
+   ```py
+   person = {
+       'first_name': 'Asabeneh',
+       'last_name': 'Yetayeh',
+       'age': 250,
+       'country': 'Finland',
+       'is_married': True,
+       'skills': ['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
+       'address': {
+           'street': 'Space street',
+           'zipcode': '02210'
+       }
+   }
+   ```
+
+   - Проверьте, есть ли в словаре ключ skills, если да, то напечатайте средний навык из списка навыков.
+   - Проверьте, есть ли в словаре ключ skills, если да, проверьте, есть ли у человека навык 'Python' и напечатайте результат.
+   - Если в навыках человека есть только JavaScript и React, напечатайте ('Он - фронтенд-разработчик'), если у человека есть навыки Node, Python, MongoDB, напечатайте ('Он - бэкенд-разработчик'), если у человека есть навыки React, Node и MongoDB, напечатайте ('Он - полностек-разработчик'), в противном случае напечатайте ('неизвестная специализация') - для более точных результатов можно использовать вложенные условия!
+   - Если человек женат и живет в Финляндии, напечатайте информацию в следующем формате:
+
+   ```py
+   Asabeneh Yetayeh живет в Финляндии. Он женат.
+   ```
+
+🎉 ПОЗДРАВЛЯЕМ! Вы успешно преодолели вызовы девятого дня и стали на шаг ближе к своей цели. Не забудьте закрепить пройденный материал практическими заданиями.
