@@ -1,63 +1,49 @@
 <div align="center">
-  <h1> 30 Days Of Python: Day 6 - Tuples</h1>
+  <h1> 30 Дней Python: День 6 - Кортежи</h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
   <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
   </a>
   <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
-  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
+  <img alt="Подписка на Twitter" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
   </a>
 
-<sub>Author:
-<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> Second Edition: July, 2021</small>
+<sub>Автор:
+<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Асабенех Йетаех</a><br>
+<small> Второе издание: Июль, 2021</small>
 </sub>
 
 </div>
 
-[<< Day 5](../05_Day_Lists/05_lists.md) | [Day 7 >>](../07_Day_Sets/07_sets.md)
+[<< День 5](../05_Day_Lists/05_lists.md) | [День 7 >>](../07_Day_Sets/07_sets.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [Day 6:](#day-6)
-  - [Tuples](#tuples)
-    - [Creating a Tuple](#creating-a-tuple)
-    - [Tuple length](#tuple-length)
-    - [Accessing Tuple Items](#accessing-tuple-items)
-    - [Slicing tuples](#slicing-tuples)
-    - [Changing Tuples to Lists](#changing-tuples-to-lists)
-    - [Checking an Item in a Tuple](#checking-an-item-in-a-tuple)
-    - [Joining Tuples](#joining-tuples)
-    - [Deleting Tuples](#deleting-tuples)
-  - [💻 Exercises: Day 6](#-exercises-day-6)
-    - [Exercises: Level 1](#exercises-level-1)
-    - [Exercises: Level 2](#exercises-level-2)
+# День 6:
 
-# Day 6:
+## Кортежи
 
-## Tuples
+Кортеж — это коллекция различных типов данных, которая упорядочена и неизменяема (immutable). Кортежи записываются с круглыми скобками, (). После создания кортежа мы не можем изменить его значения. Мы не можем использовать методы добавления, вставки, удаления в кортеже, потому что он не модифицируемый (mutable). В отличие от списка, кортеж имеет немного методов. Методы, связанные с кортежами:
 
-A tuple is a collection of different data types which is ordered and unchangeable (immutable). Tuples are written with round brackets, (). Once a tuple is created, we cannot change its values. We cannot use add, insert, remove methods in a tuple because it is not modifiable (mutable). Unlike list, tuple has few methods. Methods related to tuples:
+- tuple(): для создания пустого кортежа
+- count(): для подсчета количества определенного элемента в кортеже
+- index(): для нахождения индекса определенного элемента в кортеже
+- - оператор: для объединения двух или более кортежей и создания нового кортежа
 
-- tuple(): to create an empty tuple
-- count(): to count the number of a specified item in a tuple
-- index(): to find the index of a specified item in a tuple
-- + operator: to join two or more tuples and to create a new tuple
+### Создание кортежа
 
-### Creating a Tuple
+- Пустой кортеж: создание пустого кортежа
 
-- Empty tuple: Creating an empty tuple
-  
   ```py
-  # syntax
+  # синтаксис
   empty_tuple = ()
-  # or using the tuple constructor
+  # или используя конструктор tuple
   empty_tuple = tuple()
   ```
 
-- Tuple with initial values
-  
+- Кортеж с начальными значениями
+
   ```py
-  # syntax
+  # синтаксис
   tpl = ('item1', 'item2','item3')
   ```
 
@@ -65,24 +51,24 @@ A tuple is a collection of different data types which is ordered and unchangeabl
   fruits = ('banana', 'orange', 'mango', 'lemon')
   ```
 
-### Tuple length
+### Длина кортежа
 
-We use the _len()_ method to get the length of a tuple.
+Мы используем метод _len()_, чтобы получить длину кортежа.
 
 ```py
-# syntax
+# синтаксис
 tpl = ('item1', 'item2', 'item3')
 len(tpl)
 ```
 
-### Accessing Tuple Items
+### Доступ к элементам кортежа
 
-- Positive Indexing
-  Similar to the list data type we use positive or negative indexing to access tuple items.
-  ![Accessing tuple items](../images/tuples_index.png)
+- Положительная индексация
+  Подобно типу данных списка, мы используем положительную или отрицательную индексацию для доступа к элементам кортежа.
+  ![Доступ к элементам кортежа](../images/tuples_index.png)
 
   ```py
-  # Syntax
+  # Синтаксис
   tpl = ('item1', 'item2', 'item3')
   first_item = tpl[0]
   second_item = tpl[1]
@@ -93,71 +79,78 @@ len(tpl)
   first_fruit = fruits[0]
   second_fruit = fruits[1]
   last_index =len(fruits) - 1
-  last_fruit = fruits[las_index]
+  last_fruit = fruits[last_index]
   ```
 
-- Negative indexing
-  Negative indexing means beginning from the end, -1 refers to the last item, -2 refers to the second last and the negative of the list/tuple length refers to the first item.
-  ![Tuple Negative indexing](../images/tuple_negative_indexing.png)
+- Отрицательная индексация
+  Отрицательная индексация означает начало с конца, -1 относится к последнему элементу, -2 к предпоследнему и отрицательное значение длины списка/кортежа относится к первому элементу.
+  ![Отрицательная индексация кортежа](../images/tuple_negative_indexing.png)
+
+  ```
+
+  ```
+
+py
+
+# Синтаксис
+
+tpl = ('item1', 'item2', 'item3','item4')
+first_item = tpl[-4]
+second_item = tpl[-3]
+
+````
+
+```py
+fruits = ('banana', 'orange', 'mango', 'lemon')
+first_fruit = fruits[-4]
+second_fruit = fruits[-3]
+last_fruit = fruits[-1]
+````
+
+### Срезы кортежей
+
+Мы можем вырезать подкортеж, указав диапазон индексов, где начать и где закончить в кортеже, возвращаемое значение будет новым кортежем с указанными элементами.
+
+- Диапазон положительных индексов
 
   ```py
-  # Syntax
+  # Синтаксис
   tpl = ('item1', 'item2', 'item3','item4')
-  first_item = tpl[-4]
-  second_item = tpl[-3]
+  all_items = tpl[0:4]         # все элементы
+  all_items = tpl[0:]         # все элементы
+  middle_two_items = tpl[1:3]  # не включает элемент с индексом 3
   ```
 
   ```py
   fruits = ('banana', 'orange', 'mango', 'lemon')
-  first_fruit = fruits[-4]
-  second_fruit = fruits[-3]
-  last_fruit = fruits[-1]
-  ```
-
-### Slicing tuples
-
-We can slice out a sub-tuple by specifying a range of indexes where to start and where to end in the tuple, the return value will be a new tuple with the specified items.
-
-- Range of Positive Indexes
-
-  ```py
-  # Syntax
-  tpl = ('item1', 'item2', 'item3','item4')
-  all_items = tpl[0:4]         # all items
-  all_items = tpl[0:]         # all items
-  middle_two_items = tpl[1:3]  # does not include item at index 3
-  ```
-
-  ```py
-  fruits = ('banana', 'orange', 'mango', 'lemon')
-  all_fruits = fruits[0:4]    # all items
-  all_fruits= fruits[0:]      # all items
-  orange_mango = fruits[1:3]  # doesn't include item at index 3
+  all_fruits = fruits[0:4]    # все элементы
+  all_fruits= fruits[0:]      # все элементы
+  orange_mango = fruits[1:3]  # не включает элемент с индексом 3
   orange_to_the_rest = fruits[1:]
   ```
 
-- Range of Negative Indexes
+- Диапазон отрицательных индексов
 
   ```py
-  # Syntax
+  # Синтаксис
   tpl = ('item1', 'item2', 'item3','item4')
-  all_items = tpl[-4:]         # all items
-  middle_two_items = tpl[-3:-1]  # does not include item at index 3 (-1)
+  all_items = tpl[-4:]         # все элементы
+  middle_two_items = tpl[-3:-1]  # не включает элемент с индексом 3 (-1)
   ```
 
   ```py
   fruits = ('banana', 'orange', 'mango', 'lemon')
-  all_fruits = fruits[-4:]    # all items
-  orange_mango = fruits[-3:-1]  # doesn't include item at index 3
+  all_fruits = fruits[-4:]    # все элементы
+  orange_mango = fruits[-3:-1]  # не включает элемент с индексом 3
   orange_to_the_rest = fruits[-3:]
   ```
 
-### Changing Tuples to Lists
+### Преобразование кортежей в списки
 
-We can change tuples to lists and lists to tuples. Tuple is immutable if we want to modify a tuple we should change it to a list.
+Мы можем изменить кортежи на списки и списки на кортежи. Кортеж неизменяем, если мы хотим изменить кортеж, мы должны превратить его в список.
 
 ```py
-# Syntax
+# Синтаксис
 tpl = ('item1', 'item2', 'item3','item4')
 lst = list(tpl)
 ```
@@ -171,12 +164,12 @@ fruits = tuple(fruits)
 print(fruits)     # ('apple', 'orange', 'mango', 'lemon')
 ```
 
-### Checking an Item in a Tuple
+### Проверка наличия элемента в кортеже
 
-We can check if an item exists or not in a tuple using _in_, it returns a boolean.
+Мы можем проверить, существует ли элемент в кортеже, используя _in_, он возвращает логическое значение.
 
 ```py
-# Syntax
+# Синтаксис
 tpl = ('item1', 'item2', 'item3','item4')
 'item2' in tpl # True
 ```
@@ -188,12 +181,12 @@ print('apple' in fruits) # False
 fruits[0] = 'apple' # TypeError: 'tuple' object does not support item assignment
 ```
 
-### Joining Tuples
+### Объединение кортежей
 
-We can join two or more tuples using + operator
+Мы можем объединить два или более кортежа, используя оператор +
 
 ```py
-# syntax
+# синтаксис
 tpl1 = ('item1', 'item2', 'item3')
 tpl2 = ('item4', 'item5','item6')
 tpl3 = tpl1 + tpl2
@@ -205,12 +198,14 @@ vegetables = ('Tomato', 'Potato', 'Cabbage','Onion', 'Carrot')
 fruits_and_vegetables = fruits + vegetables
 ```
 
-### Deleting Tuples
+### Удаление кортежей
 
-It is not possible to remove a single item in a tuple but it is possible to delete the tuple itself using _del_.
+Удал
+
+ить отдельный элемент в кортеже нельзя, но можно удалить сам кортеж, используя _del_.
 
 ```py
-# syntax
+# синтаксис
 tpl1 = ('item1', 'item2', 'item3')
 del tpl1
 
@@ -221,34 +216,33 @@ fruits = ('banana', 'orange', 'mango', 'lemon')
 del fruits
 ```
 
-🌕 You are so brave, you made it to this far. You have just completed day 6 challenges and you are 6 steps a head in to your way to greatness. Now do some exercises for your brain and for your muscle.
+🌕 Вы такие смелые, вы дошли до сюда. Вы только что завершили задания шестого дня и на шести шагах впереди на пути к величию. Теперь поработайте над упражнениями для вашего мозга и для вашей мышцы.
 
-## 💻 Exercises: Day 6
+## 💻 Упражнения: День 6
 
-### Exercises: Level 1
+### Упражнения: Уровень 1
 
-1. Create an empty tuple
-2. Create a tuple containing names of your sisters and your brothers (imaginary siblings are fine)
-3. Join brothers and sisters tuples and assign it to siblings
-4. How many siblings do you have?
-5. Modify the siblings tuple and add the name of your father and mother and assign it to family_members
+1. Создайте пустой кортеж
+2. Создайте кортеж, содержащий имена ваших сестер и братьев (воображаемые братья и сестры тоже подходят)
+3. Объедините кортежи братьев и сестер и присвойте его переменной siblings
+4. Сколько у вас братьев и сестер?
+5. Измените кортеж siblings, добавив имена вашего отца и матери и присвойте его переменной family_members
 
-### Exercises: Level 2
+### Упражнения: Уровень 2
 
-1. Unpack siblings and parents from family_members
-1. Create fruits, vegetables and animal products tuples. Join the three tuples and assign it to a variable called food_stuff_tp.
-1. Change the about food_stuff_tp  tuple to a food_stuff_lt list
-1. Slice out the middle item or items from the food_stuff_tp tuple or food_stuff_lt list.
-1. Slice out the first three items and the last three items from food_staff_lt list
-1. Delete the food_staff_tp tuple completely
-1. Check if an item exists in  tuple:
+1. Распакуйте братьев, сестер и родителей из family_members
+2. Создайте кортежи fruits, vegetables и animal products. Объедините три кортежа и присвойте его переменной food_stuff_tp.
+3. Преобразуйте food_stuff_tp кортеж в список food_stuff_lt.
+4. Вырежьте средний элемент или элементы из кортежа food_stuff_tp или списка food_stuff_lt.
+5. Вырежьте первые три элемента и последние три элемента из списка food_staff_lt.
+6. Полностью удалите кортеж food_staff_tp.
+7. Проверьте, существует ли элемент в кортеже:
 
-- Check if 'Estonia' is a nordic country
-- Check if 'Iceland' is a nordic country
+- Проверьте, является ли 'Estonia' скандинавской страной
+- Проверьте, является ли 'Iceland' скандинавской страной
 
   ```py
   nordic_countries = ('Denmark', 'Finland','Iceland', 'Norway', 'Sweden')
   ```
 
-
-[<< Day 5](../05_Day_Lists/05_lists.md) | [Day 7 >>](../07_Day_Sets/07_sets.md)
+[<< День 5](../05_Day_Lists/05_lists.md) | [День 7 >>](../07_Day_Sets/07_sets.md)
