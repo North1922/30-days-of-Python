@@ -1,99 +1,74 @@
 <div align="center">
-  <h1> 30 Days Of Python: Day 5 - Lists</h1>
+  <h1> 30 Дней Python: День 5 - Списки</h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
   <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
   </a>
   <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
-  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
+  <img alt="Подписка на Twitter" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
   </a>
 
-<sub>Author:
-<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> Second Edition: July - 2021</small>
+<sub>Автор:
+<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Асабенех Йетаех</a><br>
+<small> Второе издание: Июль - 2021</small>
 </sub>
 
 </div>
 
-[<< Day 4](../04_Day_Strings/04_strings.md) | [Day 6 >>](../06_Day_Tuples/06_tuples.md)
+[<< День 4](../04_Day_Strings/04_strings.md) | [День 6 >>](../06_Day_Tuples/06_tuples.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [Day 5](#day-5)
-  - [Lists](#lists)
-    - [How to Create a List](#how-to-create-a-list)
-    - [Accessing List Items Using Positive Indexing](#accessing-list-items-using-positive-indexing)
-    - [Accessing List Items Using Negative Indexing](#accessing-list-items-using-negative-indexing)
-    - [Unpacking List Items](#unpacking-list-items)
-    - [Slicing Items from a List](#slicing-items-from-a-list)
-    - [Modifying Lists](#modifying-lists)
-    - [Checking Items in a List](#checking-items-in-a-list)
-    - [Adding Items to a List](#adding-items-to-a-list)
-    - [Inserting Items into a List](#inserting-items-into-a-list)
-    - [Removing Items from a List](#removing-items-from-a-list)
-    - [Removing Items Using Pop](#removing-items-using-pop)
-    - [Removing Items Using Del](#removing-items-using-del)
-    - [Clearing List Items](#clearing-list-items)
-    - [Copying a List](#copying-a-list)
-    - [Joining Lists](#joining-lists)
-    - [Counting Items in a List](#counting-items-in-a-list)
-    - [Finding Index of an Item](#finding-index-of-an-item)
-    - [Reversing a List](#reversing-a-list)
-    - [Sorting List Items](#sorting-list-items)
-  - [💻 Exercises: Day 5](#-exercises-day-5)
-    - [Exercises: Level 1](#exercises-level-1)
-    - [Exercises: Level 2](#exercises-level-2)
+# День 5
 
-# Day 5
+## Списки
 
-## Lists
+В Python есть четыре типа данных для хранения коллекций:
 
-There are four collection data types in Python :
+- **Список (List)**: упорядоченная и изменяемая коллекция, разрешает дублирующие элементы.
+- **Кортеж (Tuple)**: упорядоченная и неизменяемая коллекция, разрешает дублирующие элементы.
+- **Множество (Set)**: неупорядоченная, неиндексируемая и изменяемая коллекция, не разрешает дублирующие элементы.
+- **Словарь (Dictionary)**: неупорядоченная, изменяемая и индексируемая коллекция, не разрешает дублирующие элементы.
 
-- List: is a collection which is ordered and changeable(modifiable). Allows duplicate members.
-- Tuple: is a collection which is ordered and unchangeable or unmodifiable(immutable). Allows duplicate members.
-- Set: is a collection which is unordered, un-indexed and unmodifiable, but we can add new items to the set. Duplicate members are not allowed.
-- Dictionary: is a collection which is unordered, changeable(modifiable) and indexed. No duplicate members.
+Список — это коллекция различных типов данных, которая является упорядоченной и изменяемой. Список может быть пустым или может содержать различные типы данных.
 
-A list is collection of different data types which is ordered and modifiable(mutable). A list can be empty or it may have different data type items.
+### Создание списка
 
-### How to Create a List
+Создать список в Python можно двумя способами:
 
-In Python we can create lists in two ways:
-
-- Using list built-in function
+- Используя встроенную функцию list:
 
 ```py
-# syntax
+# синтаксис
 lst = list()
 ```
 
 ```py
-empty_list = list() # this is an empty list, no item in the list
+empty_list = list() # это пустой список, элементов нет
 print(len(empty_list)) # 0
 ```
 
-- Using square brackets, []
+- Используя квадратные скобки:
 
 ```py
-# syntax
+# синтаксис
 lst = []
 ```
 
 ```py
-empty_list = [] # this is an empty list, no item in the list
+empty_list = [] # это пустой список, элементов нет
 print(len(empty_list)) # 0
 ```
 
-Lists with initial values. We use _len()_ to find the length of a list.
+Список с начальными значениями. Используем _len()_, чтобы найти длину списка.
 
 ```py
-fruits = ['banana', 'orange', 'mango', 'lemon']                     # list of fruits
-vegetables = ['Tomato', 'Potato', 'Cabbage','Onion', 'Carrot']      # list of vegetables
-animal_products = ['milk', 'meat', 'butter', 'yoghurt']             # list of animal products
-web_techs = ['HTML', 'CSS', 'JS', 'React','Redux', 'Node', 'MongDB'] # list of web technologies
+fruits = ['banana', 'orange', 'mango', 'lemon']                     # список фруктов
+vegetables = ['Tomato', 'Potato', 'Cabbage','Onion', 'Carrot']      # список овощей
+animal_products = ['milk', 'meat', 'butter', 'yoghurt']             # список продуктов животноводства
+web_techs = ['HTML', 'CSS', 'JS', 'React','Redux', 'Node', 'MongDB'] # список веб-технологий
 countries = ['Finland', 'Estonia', 'Denmark', 'Sweden', 'Norway']
 
-# Print the lists and its length
+# Печатаем списки и их длину
 print('Fruits:', fruits)
 print('Number of fruits:', len(fruits))
 print('Vegetables:', vegetables)
@@ -106,49 +81,34 @@ print('Countries:', countries)
 print('Number of countries:', len(countries))
 ```
 
-```sh
-output
-Fruits: ['banana', 'orange', 'mango', 'lemon']
-Number of fruits: 4
-Vegetables: ['Tomato', 'Potato', 'Cabbage', 'Onion', 'Carrot']
-Number of vegetables: 5
-Animal products: ['milk', 'meat', 'butter', 'yoghurt']
-Number of animal products: 4
-Web technologies: ['HTML', 'CSS', 'JS', 'React', 'Redux', 'Node', 'MongDB']
-Number of web technologies: 7
-Countries: ['Finland', 'Estonia', 'Denmark', 'Sweden', 'Norway']
-Number of countries: 5
-```
-
-- Lists can have items of different data types
+- Списки могут содержать элементы различных типов данных:
 
 ```py
- lst = ['Asabeneh', 250, True, {'country':'Finland', 'city':'Helsinki'}] # list containing different data types
+lst = ['Asabeneh', 250, True, {'country':'Finland', 'city':'Helsinki'}] # список содержит различ
+
+ные типы данных
 ```
 
-### Accessing List Items Using Positive Indexing
+### Доступ к элементам списка с помощью положительной индексации
 
-We access each item in a list using their index. A list index starts from 0. The picture below shows clearly where the index starts
-![List index](../images/list_index.png)
+Мы обращаемся к каждому элементу списка по его индексу. Индексация списка начинается с 0.
 
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
-first_fruit = fruits[0] # we are accessing the first item using its index
+first_fruit = fruits[0] # обращаемся к первому элементу по индексу
 print(first_fruit)      # banana
 second_fruit = fruits[1]
 print(second_fruit)     # orange
 last_fruit = fruits[3]
 print(last_fruit) # lemon
-# Last index
+# Последний индекс
 last_index = len(fruits) - 1
 last_fruit = fruits[last_index]
 ```
 
-### Accessing List Items Using Negative Indexing
+### Доступ к элементам списка с помощью отрицательной индексации
 
-Negative indexing means beginning from the end, -1 refers to the last item, -2 refers to the second last item.
-
-![List negative indexing](../images/list_negative_indexing.png)
+Отрицательная индексация означает начало с конца, -1 относится к последнему элементу, -2 к предпоследнему элементу.
 
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
@@ -160,86 +120,61 @@ print(last_fruit)       # lemon
 print(second_last)      # mango
 ```
 
-### Unpacking List Items
+### Распаковка элементов списка
 
 ```py
-lst = ['item1','item2','item3', 'item4', 'item5']
+lst = ['item1', 'item2', 'item3', 'item4', 'item5']
 first_item, second_item, third_item, *rest = lst
 print(first_item)     # item1
 print(second_item)    # item2
 print(third_item)     # item3
 print(rest)           # ['item4', 'item5']
-
 ```
 
-```py
-# First Example
-fruits = ['banana', 'orange', 'mango', 'lemon','lime','apple']
-first_fruit, second_fruit, third_fruit, *rest = fruits 
-print(first_fruit)     # banana
-print(second_fruit)    # orange
-print(third_fruit)     # mango
-print(rest)           # ['lemon','lime','apple']
-# Second Example about unpacking list
-first, second, third,*rest, tenth = [1,2,3,4,5,6,7,8,9,10]
-print(first)          # 1
-print(second)         # 2
-print(third)          # 3
-print(rest)           # [4,5,6,7,8,9]
-print(tenth)          # 10
-# Third Example about unpacking list
-countries = ['Germany', 'France','Belgium','Sweden','Denmark','Finland','Norway','Iceland','Estonia']
-gr, fr, bg, sw, *scandic, es = countries
-print(gr)
-print(fr)
-print(bg)
-print(sw)
-print(scandic)
-print(es)
-```
+### Срезы из списка
 
-### Slicing Items from a List
-
-- Positive Indexing: We can specify a range of positive indexes by specifying the start, end and step, the return value will be a new list. (default values for start = 0, end = len(lst) - 1 (last item), step = 1)
+- Положительная индексация: мы можем указать диапазон положительных индексов, указав начало, конец и шаг, возвращаемое значение будет новым списком. (значения по умолчанию для start = 0, end = len(lst) - 1 (последний элемент), step = 1)
 
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
-all_fruits = fruits[0:4] # it returns all the fruits
-# this will also give the same result as the one above
-all_fruits = fruits[0:] # if we don't set where to stop it takes all the rest
-orange_and_mango = fruits[1:3] # it does not include the first index
+all_fruits = fruits[0:4] # возвращает все фрукты
+# это также даст тот же результат, что и выше
+all_fruits = fruits[0:] # если мы не установим, где остановиться, он возьмет все остальные
+orange_and_mango = fruits[1:3] # не включает первый индекс
 orange_mango_lemon = fruits[1:]
-orange_and_lemon = fruits[::2] # here we used a 3rd argument, step. It will take every 2cnd item - ['banana', 'mango']
+orange_and_lemon = fruits[::2] # здесь мы использовали 3-й аргумент, шаг. Он возьмет каждый 2-й элемент - ['banana', 'mango']
 ```
 
-- Negative Indexing: We can specify a range of negative indexes by specifying the start, end and step, the return value will be a new list.
+- Отрицательная индексация: мы можем указать диапазон отрицательных индексов, указав начало, конец и шаг, возвращаемое значение будет новым списком.
 
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
-all_fruits = fruits[-4:] # it returns all the fruits
-orange_and_mango = fruits[-3:-1] # it does not include the last index,['orange', 'mango']
-orange_mango_lemon = fruits[-3:] # this will give starting from -3 to the end,['orange', 'mango', 'lemon']
-reverse_fruits = fruits[::-1] # a negative step will take the list in reverse order,['lemon', 'mango', 'orange', 'banana']
+all_fruits = fruits[-4:] # возвращает все фрукты
+orange_and_mango = fruits[-3:-1] # не включает последний индекс,['orange', 'mango']
+orange_mango_lemon = fruits[-3:] # это даст начиная с -3 до конца,['orange', 'mango', 'lemon']
+reverse_fruits = fruits[::-1] # отрицательный шаг возьмет список в обратном порядке,['lemon', 'mango', 'orange', 'banana']
 ```
 
-### Modifying Lists
+### Модификация списков
 
-List is a mutable or modifiable ordered collection of items. Lets modify the fruit list.
+Список — это изменяемая или модифицируемая упорядоченная коллекция элементов. Давайте модифицируем список фруктов.
 
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
 fruits[0] = 'avocado'
 print(fruits)       #  ['avocado', 'orange', 'mango', 'lemon']
 fruits[1] = 'apple'
-print(fruits)       #  ['avocado', 'apple', 'mango', 'lemon']
+print(fruits)       #  ['avocado', 'apple', 'mango', 'lemon
+
+']
 last_index = len(fruits) - 1
 fruits[last_index] = 'lime'
 print(fruits)        #  ['avocado', 'apple', 'mango', 'lime']
 ```
 
-### Checking Items in a List
+### Проверка элементов в списке
 
-Checking an item if it is a member of a list using *in* operator. See the example below.
+Проверка элемента, если он является членом списка с использованием оператора _in_. Смотрите пример ниже.
 
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
@@ -249,12 +184,12 @@ does_exist = 'lime' in fruits
 print(does_exist)  # False
 ```
 
-### Adding Items to a List
+### Добавление элементов в список
 
-To add item to the end of an existing list we use the method *append()*.
+Чтобы добавить элемент в конец существующего списка, мы используем метод _append()_.
 
 ```py
-# syntax
+# синтаксис
 lst = list()
 lst.append(item)
 ```
@@ -267,30 +202,30 @@ fruits.append('lime')   # ['banana', 'orange', 'mango', 'lemon', 'apple', 'lime'
 print(fruits)
 ```
 
-### Inserting Items into a List
+### Вставка элементов в список
 
-We can use *insert()* method to insert a single item at a specified index in a list. Note that other items are shifted to the right. The *insert()* methods takes two arguments:index and an item to insert.
+Мы можем использовать метод _insert()_ для вставки одного элемента на определенный индекс в список. Обратите внимание, что другие элементы сдвигаются вправо. Метод _insert()_ принимает два аргумента: индекс и вставляемый элемент.
 
 ```py
-# syntax
+# синтаксис
 lst = ['item1', 'item2']
 lst.insert(index, item)
 ```
 
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon']
-fruits.insert(2, 'apple') # insert apple between orange and mango
+fruits.insert(2, 'apple') # вставить яблоко между апельсином и манго
 print(fruits)           # ['banana', 'orange', 'apple', 'mango', 'lemon']
 fruits.insert(3, 'lime')   # ['banana', 'orange', 'apple', 'lime', 'mango', 'lemon']
 print(fruits)
 ```
 
-### Removing Items from a List
+### Удаление элементов из списка
 
-The remove method removes a specified item from a list
+Метод remove удаляет указанный элемент из списка
 
 ```py
-# syntax
+# синтаксис
 lst = ['item1', 'item2']
 lst.remove(item)
 ```
@@ -298,19 +233,19 @@ lst.remove(item)
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon', 'banana']
 fruits.remove('banana')
-print(fruits)  # ['orange', 'mango', 'lemon', 'banana'] - this method removes the first occurrence of the item in the list
+print(fruits)  # ['orange', 'mango', 'lemon', 'banana'] - этот метод удаляет первое вхождение элемента в список
 fruits.remove('lemon')
 print(fruits)  # ['orange', 'mango', 'banana']
 ```
 
-### Removing Items Using Pop
+### Удаление элементов с помощью Pop
 
-The *pop()* method removes the specified index, (or the last item if index is not specified):
+Метод _pop()_ удаляет указанный индекс (или последний элемент, если индекс не указан):
 
 ```py
-# syntax
+# синтаксис
 lst = ['item1', 'item2']
-lst.pop()       # last item
+lst.pop()       # последний элемент
 lst.pop(index)
 ```
 
@@ -323,15 +258,15 @@ fruits.pop(0)
 print(fruits)       # ['orange', 'mango']
 ```
 
-### Removing Items Using Del
+### Удаление элементов с помощью Del
 
-The *del* keyword removes the specified index and it can also be used to delete items within index range. It can also delete the list completely
+Ключевое слово _del_ удаляет указанный индекс, и его также можно использовать для удаления элементов в диапазоне индексов. Он также может удалить весь список
 
 ```py
-# syntax
+# синтаксис
 lst = ['item1', 'item2']
-del lst[index] # only a single item
-del lst        # to delete the list completely
+del lst[index] # только один элемент
+del lst        # полностью удалить список
 ```
 
 ```py
@@ -340,18 +275,20 @@ del fruits[0]
 print(fruits)       # ['orange', 'mango', 'lemon', 'kiwi', 'lime']
 del fruits[1]
 print(fruits)       # ['orange', 'lemon', 'kiwi', 'lime']
-del fruits[1:3]     # this deletes items between given indexes, so it does not delete the item with index 3!
+del fruits[1:3]     # это удаляет элементы между заданными индексами, поэтому он не удаля
+
+ет элемент с индексом 3!
 print(fruits)       # ['orange', 'lime']
 del fruits
-print(fruits)       # This should give: NameError: name 'fruits' is not defined
+print(fruits)       # Это должно дать: NameError: name 'fruits' is not defined
 ```
 
-### Clearing List Items
+### Очистка элементов списка
 
-The *clear()* method empties the list:
+Метод _clear()_ очищает список:
 
 ```py
-# syntax
+# синтаксис
 lst = ['item1', 'item2']
 lst.clear()
 ```
@@ -362,12 +299,12 @@ fruits.clear()
 print(fruits)       # []
 ```
 
-### Copying a List
+### Копирование списка
 
-It is possible to copy a list by reassigning it to a new variable in the following way: list2 = list1. Now, list2 is a reference of list1, any changes we make in list2 will also modify the original, list1. But there are lots of case in which we do not like to modify the original instead we like to have a different copy. One of way of avoiding the problem above is using _copy()_.
+Можно скопировать список, переназначив его новой переменной следующим образом: list2 = list1. Теперь list2 является ссылкой на list1, любые изменения, которые мы сделаем в list2, также изменят оригинал, list1. Но есть много случаев, когда мы не хотим изменять оригинал, вместо этого мы хотим иметь другую копию. Один из способов избежать вышеуказанной проблемы - использовать _copy()_.
 
 ```py
-# syntax
+# синтаксис
 lst = ['item1', 'item2']
 lst_copy = lst.copy()
 ```
@@ -378,14 +315,14 @@ fruits_copy = fruits.copy()
 print(fruits_copy)       # ['banana', 'orange', 'mango', 'lemon']
 ```
 
-### Joining Lists
+### Соединение списков
 
-There are several ways to join, or concatenate, two or more lists in Python.
+Существует несколько способов объединить или конкатенировать два или более списков в Python.
 
-- Plus Operator (+)
+- Оператор Plus (+)
 
 ```py
-# syntax
+# синтаксис
 list3 = list1 + list2
 ```
 
@@ -401,11 +338,11 @@ fruits_and_vegetables = fruits + vegetables
 print(fruits_and_vegetables ) # ['banana', 'orange', 'mango', 'lemon', 'Tomato', 'Potato', 'Cabbage', 'Onion', 'Carrot']
 ```
 
-- Joining using extend() method
-  The *extend()* method allows to append list in a list. See the example below.
+- Соединение с помощью метода extend()
+  Метод _extend()_ позволяет добавлять список в список. Смотрите пример ниже.
 
 ```py
-# syntax
+# синтаксис
 list1 = ['item1', 'item2']
 list2 = ['item3', 'item4', 'item5']
 list1.extend(list2)
@@ -429,12 +366,12 @@ fruits.extend(vegetables)
 print('Fruits and vegetables:', fruits ) # Fruits and vegetables: ['banana', 'orange', 'mango', 'lemon', 'Tomato', 'Potato', 'Cabbage', 'Onion', 'Carrot']
 ```
 
-### Counting Items in a List
+### Подсчет элементов в списке
 
-The *count()* method returns the number of times an item appears in a list:
+Метод _count()_ возвращает количество раз, когда элемент появляется в списке:
 
 ```py
-# syntax
+# синтаксис
 lst = ['item1', 'item2']
 lst.count(item)
 ```
@@ -446,12 +383,12 @@ ages = [22, 19, 24, 25, 26, 24, 25, 24]
 print(ages.count(24))           # 3
 ```
 
-### Finding Index of an Item
+### Поиск индекса элемента
 
-The *index()* method returns the index of an item in the list:
+Метод _index()_ возвращает индекс элемента в списке:
 
 ```py
-# syntax
+# синтаксис
 lst = ['item1', 'item2']
 lst.index(item)
 ```
@@ -460,15 +397,15 @@ lst.index(item)
 fruits = ['banana', 'orange', 'mango', 'lemon']
 print(fruits.index('orange'))   # 1
 ages = [22, 19, 24, 25, 26, 24, 25, 24]
-print(ages.index(24))           # 2, the first occurrence
+print(ages.index(24))           # 2, первое вхождение
 ```
 
-### Reversing a List
+### Обращение списка
 
-The *reverse()* method reverses the order of a list.
+Метод _reverse()_ обращает порядок списка.
 
 ```py
-# syntax
+# синтаксис
 lst = ['item1', 'item2']
 lst.reverse()
 
@@ -483,106 +420,86 @@ ages.reverse()
 print(ages) # [24, 25, 24, 26, 25, 24, 19, 22]
 ```
 
-### Sorting List Items
+### Сортировка элементов списка
 
-To sort lists we can use _sort()_ method or _sorted()_ built-in functions. The _sort()_ method reorders the list items in ascending order and modifies the original list. If an argument of _sort()_ method reverse is equal to true, it will arrange the list in descending order.
+Для сортировки списков мы можем использовать метод _sort()_ или встроенную функцию _sorted()_. Метод _sort()_ изменяет порядок элементов списка по возрастанию и модифицирует исходный список. Если аргумент метода _sort()_ reverse равен true, он упорядочит список в порядке убывания.
 
-- sort(): this method modifies the original list
+- sort(): этот метод изменяет оригинальный список
 
   ```py
-  # syntax
+  # синтаксис
   lst = ['item1', 'item2']
-  lst.sort()                # ascending
-  lst.sort(reverse=True)    # descending
+  lst.sort()                # по возрастанию
+  lst.sort(reverse=True)    # по убыванию
   ```
 
-  **Example:**
+  **Пример:**
 
   ```py
   fruits = ['banana', 'orange', 'mango', 'lemon']
   fruits.sort()
-  print(fruits)             # sorted in alphabetical order, ['banana', 'lemon', 'mango', 'orange']
+  print(fruits)             # отсортировано в алфавитном порядке, ['banana', 'lemon', 'mango', 'orange']
   fruits.sort(reverse=True)
   print(fruits) # ['orange', 'mango', 'lemon', 'banana']
   ages = [22, 19, 24, 25, 26, 24, 25, 24]
   ages.sort()
   print(ages) #  [19, 22, 24, 24, 24, 25, 25, 26]
- 
+
   ages.sort(reverse=True)
   print(ages) #  [26, 25, 25, 24, 24, 24, 22, 19]
   ```
 
-  sorted(): returns the ordered list without modifying the original list
-  **Example:**
+  sorted(): возвращает упорядоченный список без изменения оригинального списка
+  **Пример:**
 
   ```py
   fruits = ['banana', 'orange', 'mango', 'lemon']
   print(sorted(fruits))   # ['banana', 'lemon', 'mango', 'orange']
-  # Reverse order
+  # Обратный порядок
   fruits = ['banana', 'orange', 'mango', 'lemon']
   fruits = sorted(fruits,reverse=True)
   print(fruits)     # ['orange', 'mango', 'lemon', 'banana']
   ```
 
-🌕 You are diligent and you have already achieved quite a lot. You have just completed day 5 challenges and you are 5 steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
+🌕 Вы усердны и уже достигли немало. Вы только что завершили задания пятого дня и на пяти шагах впереди на пути к величию. Теперь поработайте над упражнениями для вашего мозга и мышц.
 
-## 💻 Exercises: Day 5
+## 💻 Упражнения: День 5
 
-### Exercises: Level 1
+### Упражнения: Уровень 1
 
-1. Declare an empty list
-2. Declare a list with more than 5 items
-3. Find the length of your list
-4. Get the first item, the middle item and the last item of the list
-5. Declare a list called mixed_data_types, put your(name, age, height, marital status, address)
-6. Declare a list variable named it_companies and assign initial values Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon.
-7. Print the list using _print()_
-8. Print the number of companies in the list
-9. Print the first, middle and last company
-10. Print the list after modifying one of the companies
-11. Add an IT company to it_companies
-12. Insert an IT company in the middle of the companies list
-13. Change one of the it_companies names to uppercase (IBM excluded!)
-14. Join the it_companies with a string '#;&nbsp; '
-15. Check if a certain company exists in the it_companies list.
-16. Sort the list using sort() method
-17. Reverse the list in descending order using reverse() method
-18. Slice out the first 3 companies from the list
-19. Slice out the last 3 companies from the list
-20. Slice out the middle IT company or companies from the list
-21. Remove the first IT company from the list
-22. Remove the middle IT company or companies from the list
-23. Remove the last IT company from the list
-24. Remove all IT companies from the list
-25. Destroy the IT companies list
-26. Join the following lists:
+1. Объявите пустой список
+2. Объявите список с более чем 5 элементами
+3. Найдите длину вашего списка
+4. Получите первый
+
+элемент, средний элемент и последний элемент списка 5. Объявите список с именем mixed*data_types, поместите ваше (имя, возраст, рост, семейное положение, адрес) 6. Объявите список с именем it_companies и присвойте начальные значения Facebook, Google, Microsoft, Apple, IBM, Oracle и Amazon. 7. Выведите список с помощью \_print()* 8. Выведите количество компаний в списке 9. Выведите первую, среднюю и последнюю компанию 10. Выведите список после изменения одной из компаний 11. Добавьте IT-компанию в it_companies 12. Вставьте IT-компанию в середину списка компаний 13. Измените имя одной из it_companies на верхний регистр (кроме IBM!) 14. Соедините it_companies с строкой '#;&nbsp; ' 15. Проверьте, существует ли определенная компания в списке it_companies. 16. Отсортируйте список с помощью метода sort() 17. Переверните список в порядке убывания с помощью метода reverse() 18. Вырежьте первые 3 компании из списка 19. Вырежьте последние 3 компании из списка 20. Вырежьте среднюю IT-компанию или компании из списка 21. Удалите первую IT-компанию из списка 22. Удалите среднюю IT-компанию или компании из списка 23. Удалите последнюю IT-компанию из списка 24. Удалите все IT-компании из списка 25. Уничтожьте список IT-компаний 26. Объедините следующие списки:
 
     ```py
     front_end = ['HTML', 'CSS', 'JS', 'React', 'Redux']
     back_end = ['Node','Express', 'MongoDB']
     ```
 
-27. After joining the lists in question 26. Copy the joined list and assign it to a variable full_stack. Then insert Python and SQL after Redux.
+27. После объединения списков в вопросе 26 скопируйте объединенный список и присвойте его переменной full_stack. Затем вставьте Python и SQL после Redux.
 
-### Exercises: Level 2
+### Упражнения: Уровень 2
 
-1. The following is a list of 10 students ages:
+1. Ниже приведен список из 10 возрастов студентов:
 
 ```sh
 ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
 ```
 
-- Sort the list and find the min and max age
-- Add the min age and the max age again to the list
-- Find the median age (one middle item or two middle items divided by two)
-- Find the average age (sum of all items divided by their number )
-- Find the range of the ages (max minus min)
-- Compare the value of (min - average) and (max - average), use _abs()_ method
+- Отсортируйте список и найдите минимальный и максимальный возраст
+- Добавьте минимальный возраст и максимальный возраст обратно в список
+- Найдите средний возраст (один средний элемент или два средних элемента, деленные на два)
+- Найдите средний возраст (сумма всех элементов, деленная на их количество)
+- Найдите размах возрастов (максимальный минус минимальный)
+- Сравните значение (мин - средний) и (макс - средний), используйте метод _abs()_
 
-1. Find the middle country(ies) in the [countries list](https://github.com/Asabeneh/30-Days-Of-Python/tree/master/data/countries.py)
-1. Divide the countries list into two equal lists if it is even if not one more country for the first half.
-1. ['China', 'Russia', 'USA', 'Finland', 'Sweden', 'Norway', 'Denmark']. Unpack the first three countries and the rest as scandic countries.
+2. Найдите среднюю страну(ы) в [списке стран](https://github.com/Asabeneh/30-Days-Of-Python/tree/master/data/countries.py)
+3. Разделите список стран на два равных списка, если он четный, если нет, то одна страна больше для первой половины.
+4. ['China', 'Russia', 'USA', 'Finland', 'Sweden', 'Norway', 'Denmark']. Распакуйте первые три страны и остальные как скандинавские страны.
 
-🎉 CONGRATULATIONS ! 🎉
+🎉 ПОЗДРАВЛЯЕМ ! 🎉
 
-[<< Day 4](../04_Day_Strings/04_strings.md) | [Day 6 >>](../06_Day_Tuples/06_tuples.md)
+[<< День 4](../04_Day_Strings/04_strings.md) | [День 6 >>](../06_Day_Tuples/06_tuples.md)
