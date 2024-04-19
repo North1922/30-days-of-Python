@@ -1,143 +1,123 @@
 <div align="center">
-  <h1> 30 Days Of Python: Day 7 - Sets</h1>
+  <h1> 30 Дней Python: День 7 - Множества</h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
   <img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social">
   </a>
   <a class="header-badge" target="_blank" href="https://twitter.com/Asabeneh">
-  <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
+  <img alt="Подписка на Twitter" src="https://img.shields.io/twitter/follow/asabeneh?style=social">
   </a>
 
-<sub>Author:
-<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Asabeneh Yetayeh</a><br>
-<small> Second Edition: July, 2021</small>
+<sub>Автор:
+<a href="https://www.linkedin.com/in/asabeneh/" target="_blank">Асабенех Йетаех</a><br>
+<small> Второе издание: Июль, 2021</small>
 </sub>
 
 </div>
 
-[<< Day 6](../06_Day_Tuples/06_tuples.md) | [Day 8 >>](../08_Day_Dictionaries/08_dictionaries.md)
+[<< День 6](../06_Day_Tuples/06_tuples.md) | [День 8 >>](../08_Day_Dictionaries/08_dictionaries.md)
 
 ![30DaysOfPython](../images/30DaysOfPython_banner3@2x.png)
 
-- [📘 Day 7](#-day-7)
-  - [Sets](#sets)
-    - [Creating a Set](#creating-a-set)
-    - [Getting Set's Length](#getting-sets-length)
-    - [Accessing Items in a Set](#accessing-items-in-a-set)
-    - [Checking an Item](#checking-an-item)
-    - [Adding Items to a Set](#adding-items-to-a-set)
-    - [Removing Items from a Set](#removing-items-from-a-set)
-    - [Clearing Items in a Set](#clearing-items-in-a-set)
-    - [Deleting a Set](#deleting-a-set)
-    - [Converting List to Set](#converting-list-to-set)
-    - [Joining Sets](#joining-sets)
-    - [Finding Intersection Items](#finding-intersection-items)
-    - [Checking Subset and Super Set](#checking-subset-and-super-set)
-    - [Checking the Difference Between Two Sets](#checking-the-difference-between-two-sets)
-    - [Finding Symmetric Difference Between Two Sets](#finding-symmetric-difference-between-two-sets)
-    - [Joining Sets](#joining-sets-1)
-  - [💻 Exercises: Day 7](#-exercises-day-7)
-    - [Exercises: Level 1](#exercises-level-1)
-    - [Exercises: Level 2](#exercises-level-2)
-    - [Exercises: Level 3](#exercises-level-3)
+# 📘 День 7
 
-# 📘 Day 7
+## Множества
 
-## Sets
+Множество — это коллекция элементов. Вспомним урок математики в начальной или средней школе. Математическое определение множества также применимо и в Python. Множество — это коллекция неупорядоченных и непронумерованных уникальных элементов. В Python множество используется для хранения уникальных элементов, и можно найти _объединение_, _пересечение_, _разность_, _симметрическую разность_, _подмножество_, _надмножество_ и _непересекающиеся множества_ среди множеств.
 
-Set is a collection of items. Let me take you back to your elementary or high school Mathematics lesson. The Mathematics definition of a set can be applied also in Python. Set is a collection of unordered and un-indexed distinct elements. In Python set is used to store unique items, and it is possible to find the _union_, _intersection_, _difference_, _symmetric difference_, _subset_, _super set_ and _disjoint set_ among sets.
+### Создание множества
 
-### Creating a Set
+Мы используем встроенную функцию _set()_.
 
-We use the _set()_ built-in function.
-
-- Creating an empty set
+- Создание пустого множества
 
 ```py
-# syntax
+# синтаксис
 st = set()
 ```
 
-- Creating a set with initial items
+- Создание множества с начальными элементами
 
 ```py
-# syntax
+# синтаксис
 st = {'item1', 'item2', 'item3', 'item4'}
 ```
 
-**Example:**
+**Пример:**
 
 ```py
-# syntax
+# синтаксис
 fruits = {'banana', 'orange', 'mango', 'lemon'}
 ```
 
-### Getting Set's Length
+### Получение длины множества
 
-We use **len()** method to find the length of a set.
+Мы используем метод **len()** для определения длины множества.
 
 ```py
-# syntax
+# синтаксис
 st = {'item1', 'item2', 'item3', 'item4'}
 len(st)
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 fruits = {'banana', 'orange', 'mango', 'lemon'}
 len(fruits)
 ```
 
-### Accessing Items in a Set
+### Доступ к элементам множества
 
-We use loops to access items. We will see this in loop section
+Мы используем циклы для доступа к элементам. Мы увидим это в разделе о циклах.
 
-### Checking an Item
+### Проверка наличия элемента
 
-To check if an item exist in a list we use _in_ membership operator.
+Чтобы проверить, существует ли элемент в списке, мы используем оператор принадлежности _in_.
 
 ```py
-# syntax
+# синтаксис
 st = {'item1', 'item2', 'item3', 'item4'}
-print("Does set st contain item3? ", 'item3' in st) # Does set st contain item3? True
+print("Содержит ли множество st элемент item3? ", 'item3' in st) # Содержит ли множество st элемент item3? True
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 fruits = {'banana', 'orange', 'mango', 'lemon'}
 print('mango' in fruits ) # True
 ```
 
-### Adding Items to a Set
+### Добавление элементов в множество
 
-Once a set is created we cannot change any items and we can also add additional items.
+После создания множества мы не можем изменять его элементы, но можем добавлять новые.
 
-- Add one item using _add()_
+- Добавление одного элемента с помощью _add()_
 
 ```py
-# syntax
+# синтаксис
 st = {'item1', 'item2', 'item3', 'item4'}
 st.add('item5')
 ```
 
-**Example:**
+**Пример:**
 
 ```py
-fruits = {'banana', 'orange', 'mango', 'lemon'}
+fruits = {'banana
+
+', 'orange', 'mango', 'lemon'}
 fruits.add('lime')
 ```
 
-- Add multiple items using _update()_
-  The _update()_ allows to add multiple items to a set. The _update()_ takes a list argument.
+- Добавление нескольких элементов с помощью _update()_
+  Метод _update()_ позволяет добавить несколько элементов в множество. _update()_ принимает аргумент в виде списка.
 
 ```py
-# syntax
+# синтаксис
 st = {'item1', 'item2', 'item3', 'item4'}
 st.update(['item5','item6','item7'])
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 fruits = {'banana', 'orange', 'mango', 'lemon'}
@@ -145,44 +125,43 @@ vegetables = ('tomato', 'potato', 'cabbage','onion', 'carrot')
 fruits.update(vegetables)
 ```
 
-### Removing Items from a Set
+### Удаление элементов из множества
 
-We can remove an item from a set using _remove()_ method. If the item is not found _remove()_ method will raise errors, so it is good to check if the item exist in the given set. However, _discard()_ method doesn't raise any errors.
+Мы можем удалить элемент из множества, используя метод _remove()_. Если элемент не найден, метод _remove()_ вызовет ошибки, поэтому хорошо проверить, существует ли элемент в данном множестве. Однако метод _discard()_ ошибок не вызывает.
 
 ```py
-# syntax
+# синтаксис
 st = {'item1', 'item2', 'item3', 'item4'}
 st.remove('item2')
 ```
 
-The pop() methods remove a random item from a list and it returns the removed item.
+Метод pop() удаляет случайный элемент из списка и возвращает удаленный элемент.
 
-**Example:**
-
-```py
-fruits = {'banana', 'orange', 'mango', 'lemon'}
-fruits.pop()  # removes a random item from the set
-
-```
-
-If we are interested in the removed item.
+**Пример:**
 
 ```py
 fruits = {'banana', 'orange', 'mango', 'lemon'}
-removed_item = fruits.pop() 
+fruits.pop()  # удаляет случайный элемент из множества
 ```
 
-### Clearing Items in a Set
-
-If we want to clear or empty the set we use _clear_ method.
+Если нам интересен удаленный элемент.
 
 ```py
-# syntax
+fruits = {'banana', 'orange', 'mango', 'lemon'}
+removed_item = fruits.pop()
+```
+
+### Очистка элементов в множестве
+
+Если мы хотим очистить или опустошить множество, мы используем метод _clear_.
+
+```py
+# синтаксис
 st = {'item1', 'item2', 'item3', 'item4'}
 st.clear()
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 fruits = {'banana', 'orange', 'mango', 'lemon'}
@@ -190,73 +169,75 @@ fruits.clear()
 print(fruits) # set()
 ```
 
-### Deleting a Set
+### Удаление множества
 
-If we want to delete the set itself we use _del_ operator.
+Если мы хотим удалить само множество, мы используем оператор _del_.
 
 ```py
-# syntax
+# синтаксис
 st = {'item1', 'item2', 'item3', 'item4'}
 del st
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 fruits = {'banana', 'orange', 'mango', 'lemon'}
 del fruits
 ```
 
-### Converting List to Set
+### Преобразование списка в множество
 
-We can convert list to set and set to list. Converting list to set removes duplicates and only unique items will be reserved.
+Мы можем преобразовать список в множество и множество в список. Преобразование списка в множество удаляет дубликаты, и будут сохранены только уникальные элементы.
 
 ```py
-# syntax
+# синтаксис
 lst = ['item1', 'item2', 'item3', 'item4', 'item1']
-st = set(lst)  # {'item2', 'item4', 'item1', 'item3'} - the order is random, because sets in general are unordered
+st = set(lst)  # {'item2', 'item4', 'item1', 'item3'} - порядок случайный, потому что множества в целом неупорядоченные
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 fruits = ['banana', 'orange', 'mango', 'lemon','orange', 'banana']
 fruits = set(fruits) # {'mango', 'lemon', 'banana', 'orange'}
 ```
 
-### Joining Sets
+### Объединение множеств
 
-We can join two sets using the _union()_ or _update()_ method.
+Мы можем объединить два множества, используя метод _union()_ или _update()_.
 
-- Union
-  This method returns a new set
+- Объединение
+  Этот метод возвращает новое множество
 
 ```py
-# syntax
+# синтаксис
 st1 = {'item1', 'item2', 'item3', 'item4'}
 st2 = {'item5', 'item6', 'item7', 'item8'}
 st3 = st1.union(st2)
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 fruits = {'banana', 'orange', 'mango', 'lemon'}
 vegetables = {'tomato', 'potato', 'cabbage','onion', 'carrot'}
-print(fruits.union(vegetables)) # {'lemon', 'carrot', 'tomato', 'banana', 'mango', 'orange', 'cabbage', 'potato', 'onion'}
+print(fruits.union(vegetables)) # {'lemon
+
+', 'carrot', 'tomato', 'banana', 'mango', 'orange', 'cabbage', 'potato', 'onion'}
 ```
 
-- Update
-  This method inserts a set into a given set
+- Обновление
+  Этот метод вставляет множество в заданное множество
 
 ```py
-# syntax
+# синтаксис
 st1 = {'item1', 'item2', 'item3', 'item4'}
 st2 = {'item5', 'item6', 'item7', 'item8'}
-st1.update(st2) # st2 contents are added to st1
+st1.update(st2) # содержимое st2 добавляется к st1
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 fruits = {'banana', 'orange', 'mango', 'lemon'}
@@ -265,18 +246,18 @@ fruits.update(vegetables)
 print(fruits) # {'lemon', 'carrot', 'tomato', 'banana', 'mango', 'orange', 'cabbage', 'potato', 'onion'}
 ```
 
-### Finding Intersection Items
+### Нахождение пересечений множеств
 
-Intersection returns a set of items which are in both the sets. See the example
+Пересечение возвращает множество элементов, которые присутствуют в обоих множествах. Смотрите пример
 
 ```py
-# syntax
+# синтаксис
 st1 = {'item1', 'item2', 'item3', 'item4'}
 st2 = {'item3', 'item2'}
 st1.intersection(st2) # {'item3', 'item2'}
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 whole_numbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
@@ -288,27 +269,27 @@ dragon = {'d', 'r', 'a', 'g', 'o','n'}
 python.intersection(dragon)     # {'o', 'n'}
 ```
 
-### Checking Subset and Super Set
+### Проверка подмножества и надмножества
 
-A set can be a subset or super set of other sets:
+Множество может быть подмножеством или надмножеством других множеств:
 
-- Subset: _issubset()_
-- Super set: _issuperset_
+- Подмножество: _issubset()_
+- Надмножество: _issuperset_
 
 ```py
-# syntax
+# синтаксис
 st1 = {'item1', 'item2', 'item3', 'item4'}
 st2 = {'item2', 'item3'}
 st2.issubset(st1) # True
 st1.issuperset(st2) # True
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 whole_numbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 even_numbers = {0, 2, 4, 6, 8, 10}
-whole_numbers.issubset(even_numbers) # False, because it is a super set
+whole_numbers.issubset(even_numbers) # False, потому что это надмножество
 whole_numbers.issuperset(even_numbers) # True
 
 python = {'p', 'y', 't', 'h', 'o','n'}
@@ -316,19 +297,19 @@ dragon = {'d', 'r', 'a', 'g', 'o','n'}
 python.issubset(dragon)     # False
 ```
 
-### Checking the Difference Between Two Sets
+### Проверка разности между двумя множествами
 
-It returns the difference between two sets.
+Она возвращает разность между двумя множествами.
 
 ```py
-# syntax
+# синтаксис
 st1 = {'item1', 'item2', 'item3', 'item4'}
 st2 = {'item2', 'item3'}
 st2.difference(st1) # set()
 st1.difference(st2) # {'item1', 'item4'} => st1\st2
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 whole_numbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
@@ -337,23 +318,25 @@ whole_numbers.difference(even_numbers) # {1, 3, 5, 7, 9}
 
 python = {'p', 'y', 't', 'o','n'}
 dragon = {'d', 'r', 'a', 'g', 'o','n'}
-python.difference(dragon)     # {'p', 'y', 't'}  - the result is unordered (characteristic of sets)
+python.difference(dragon)     # {'p', 'y', '
+
+t'}  - результат неупорядочен (характеристика множеств)
 dragon.difference(python)     # {'d', 'r', 'a', 'g'}
 ```
 
-### Finding Symmetric Difference Between Two Sets
+### Нахождение симметрической разности между двумя множествами
 
-It returns the the symmetric difference between two sets. It means that it returns a set that contains all items from both sets, except items that are present in both sets, mathematically: (A\B) ∪ (B\A)
+Она возвращает симметрическую разность между двумя множествами. Это означает, что она возвращает множество, содержащее все элементы из обоих множеств, за исключением элементов, присутствующих в обоих множествах, математически: (A\B) ∪ (B\A)
 
 ```py
-# syntax
+# синтаксис
 st1 = {'item1', 'item2', 'item3', 'item4'}
 st2 = {'item2', 'item3'}
-# it means (A\B)∪(B\A)
+# это означает (A\B)∪(B\A)
 st2.symmetric_difference(st1) # {'item1', 'item4'}
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 whole_numbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
@@ -365,65 +348,67 @@ dragon = {'d', 'r', 'a', 'g', 'o','n'}
 python.symmetric_difference(dragon)  # {'r', 't', 'p', 'y', 'g', 'a', 'd', 'h'}
 ```
 
-### Joining Sets
+### Объединение множеств
 
-If two sets do not have a common item or items we call them disjoint sets. We can check if two sets are joint or disjoint using _isdisjoint()_ method.
+Если два множества не имеют общих элементов, мы называем их непересекающимися множествами. Мы можем проверить, являются ли два множества пересекающимися или непересекающимися, используя метод _isdisjoint()_.
 
 ```py
-# syntax
+# синтаксис
 st1 = {'item1', 'item2', 'item3', 'item4'}
 st2 = {'item2', 'item3'}
 st2.isdisjoint(st1) # False
 ```
 
-**Example:**
+**Пример:**
 
 ```py
 even_numbers = {0, 2, 4 ,6, 8}
 even_numbers = {1, 3, 5, 7, 9}
-even_numbers.isdisjoint(odd_numbers) # True, because no common item
+even_numbers.isdisjoint(odd_numbers) # True, потому что нет общих элементов
 
 python = {'p', 'y', 't', 'h', 'o','n'}
 dragon = {'d', 'r', 'a', 'g', 'o','n'}
-python.isdisjoint(dragon)  # False, there are common items {'o', 'n'}
+python.isdisjoint(dragon)  # False, есть общие элементы {'o', 'n'}
 ```
 
-🌕 You are a rising star . You have just completed day 7 challenges and you are 7 steps ahead in to your way to greatness. Now do some exercises for your brain and muscles.
+🌕 Вы — восходящая звезда. Вы только что завершили задания седьмого дня и на семи шагах впереди на пути к величию. Теперь поработайте над упражнениями для вашего мозга и для вашей мышцы.
 
-## 💻 Exercises: Day 7
+## 💻 Упражнения: День 7
 
 ```py
-# sets
+# множества
 it_companies = {'Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'}
 A = {19, 22, 24, 20, 25, 26}
 B = {19, 22, 20, 25, 26, 24, 28, 27}
 age = [22, 19, 24, 25, 26, 24, 25, 24]
 ```
 
-### Exercises: Level 1
+### Упражнения: Уровень 1
 
-1. Find the length of the set it_companies
-2. Add 'Twitter' to it_companies
-3. Insert multiple IT companies at once to the set it_companies
-4. Remove one of the companies from the set it_companies
-5. What is the difference between remove and discard
+1. Найдите длину множества it_companies
+2. Добавьте 'Twitter' в it_companies
+3. Вставьте несколько ИТ-компаний сразу в множество it_companies
+4. Удалите одну из компаний из множества it_companies
+5. В чем разница м
 
-### Exercises: Level 2
+ежду remove и discard
 
-1. Join A and B
-1. Find A intersection B
-1. Is A subset of B
-1. Are A and B disjoint sets
-1. Join A with B and B with A
-1. What is the symmetric difference between A and B
-1. Delete the sets completely
+### Упражнения: Уровень 2
 
-### Exercises: Level 3
+1. Объедините A и B
+2. Найдите пересечение A и B
+3. Является ли A подмножеством B
+4. Являются ли A и B непересекающимися множествами
+5. Объедините A с B и B с A
+6. Какая симметричная разность между A и B
+7. Удалите множества полностью
 
-1. Convert the ages to a set and compare the length of the list and the set, which one is bigger?
-1. Explain the difference between the following data types: string, list, tuple and set
-2. _I am a teacher and I love to inspire and teach people._ How many unique words have been used in the sentence? Use the split methods and set to get the unique words.
+### Упражнения: Уровень 3
 
-🎉 CONGRATULATIONS ! 🎉
+1. Преобразуйте возрасты в множество и сравните длину списка и множества, какой больше?
+2. Объясните разницу между следующими типами данных: строка, список, кортеж и множество
+3. _Я учитель, и мне нравится вдохновлять и учить людей._ Сколько уникальных слов было использовано в предложении? Используйте методы split и set, чтобы получить уникальные слова.
 
-[<< Day 6](../06_Day_Tuples/06_tuples.md) | [Day 8 >>](../08_Day_Dictionaries/08_dictionaries.md)
+🎉 ПОЗДРАВЛЯЕМ ! 🎉
+
+[<< День 6](../06_Day_Tuples/06_tuples.md) | [День 8 >>](../08_Day_Dictionaries/08_dictionaries.md)
