@@ -1,4 +1,4 @@
-````markdown
+
 <div align="center">
   <h1> 30 Дней Python: День 10 - Циклы</h1>
   <a class="header-badge" target="_blank" href="https://www.linkedin.com/in/asabeneh/">
