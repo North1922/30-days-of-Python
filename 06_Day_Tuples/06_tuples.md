@@ -93,19 +93,19 @@ len(tpl)
 py
 
 # Синтаксис
-
+ ```py
 tpl = ('item1', 'item2', 'item3','item4')
 first_item = tpl[-4]
 second_item = tpl[-3]
+ ```
 
-````
 
 ```py
 fruits = ('banana', 'orange', 'mango', 'lemon')
 first_fruit = fruits[-4]
 second_fruit = fruits[-3]
 last_fruit = fruits[-1]
-````
+```
 
 ### Срезы кортежей
 
@@ -200,9 +200,7 @@ fruits_and_vegetables = fruits + vegetables
 
 ### Удаление кортежей
 
-Удал
-
-ить отдельный элемент в кортеже нельзя, но можно удалить сам кортеж, используя _del_.
+Удалить отдельный элемент в кортеже нельзя, но можно удалить сам кортеж, используя _del_.
 
 ```py
 # синтаксис
